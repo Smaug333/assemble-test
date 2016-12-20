@@ -1,0 +1,47 @@
+---
+page-title: Index Template!
+site-class: "index"
+
+intro: 
+  name: 
+  - the name 1
+  - the name 2
+  - the name 3
+
+conditional: true
+conditional2: true
+
+inc: 'templates/md/betslip.md'
+
+betslip: Collapsible Panel, God Damnit!
+betslip-collapse: Collapsible Text
+collapse: collapse-url
+betslip-deep-collapse: Top Down!
+
+great: true 
+magnificent: true 
+
+var: templates/md/test.md
+
+c-account-bets-show-header: different value possible? Oh shiny!
+
+tpl: 'templates/partials/wrapme.hbs'
+
+
+c-payment-list-type: mal schauen
+m-form-password-css: look at dead chicken!
+---
+{{!-- {{> wrapme paneltitle= "Panel Header inline" panelfooter= "This footer" m-offcanvas-opt-title-main="Hauswette" }} --}}
+{{!-- {{#panel paneltitle= "Panel Header inline" panelfooter= "This footer"}}{{/panel}} --}}
+{{!-- {{> wrapme paneltitle="Panel Header inline2" panelfooter="This footer3" panelcontent="cmp_betslip_tabs" m-offcanvas-opt-title-main="inline Sportwetten"}} --}}
+
+
+{{ globalVars.c-payment-list-type }}
+{{ globalVars.m-offcanvas-opt-title-main }} <br><br>
+
+
+{{#panel2 "block" paneltitle="header-test" panelfooter="footer-test" }}
+	{{>cmp_betslip_tabs   }}
+{{/panel2}}
+
+{{m-form-password-css}}

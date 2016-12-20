@@ -1,0 +1,14 @@
+
+<ul class="intro">
+  {{#each intro }}
+  <li class="intro_item
+    {{#unless @index}}
+    is-active
+    {{/unless}}">
+    <h3>{{ this.name }}</h3>
+    <img src="{{ assets }}/img/{{hyphenate this.name }}.jpg" alt="{{ this.name }}">
+    <p>{{md 'templates/md/lorem.md'}} </p>
+    {{include 'head'}}
+  </li>
+  {{/each}}
+</ul>
