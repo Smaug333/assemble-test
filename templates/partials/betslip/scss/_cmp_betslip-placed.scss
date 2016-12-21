@@ -1,0 +1,16 @@
+.c__betslip-placed__content {
+  @extend %betslip-wrap;
+}
+
+.c__betslip-placed__message {
+    @extend %betslip-message-main;
+  @include background-color($white);
+  @include border( 1px, 1px, null,1px, $color-success);
+  color: $color-success;
+}
+
+.c__betslip-placed__bill {
+    @extend %betslip-seperator;
+    @include border(null, .5rem, null, .5rem, $border-color-betslip-summary);
+    font-weight: 700;
+}

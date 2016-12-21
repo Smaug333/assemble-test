@@ -1,0 +1,77 @@
+.c__betslip-action__collapse {
+  @include padding(1rem, .5rem, 1rem, 1.5rem);
+  @include pseudo-content(before, null) {
+    left: auto;
+    right: 10px;
+  }
+  .c__betslip-action__collapse-text {
+    @include padding(0,x);
+    font-size: 1.8rem;
+  }
+}
+
+.c__betslip-action__ui,
+.c__betslip-actions__ui-inline {
+  @include margin(null, null, null, $padding-grid-gutter);
+  flex-basis: 2rem;
+  height: 2rem;
+}
+
+.c__betslip-action__cell {
+  @include padding(null, .5rem, null, null);
+}
+.c__betslip-action__delete {
+  @extend %border-betslip-actions;
+  @include background-color($white);
+  @include border(1px, null, 1px, null, $border-color-betslip-actions);
+  @include padding(null, .5rem);
+  align-items: center;
+  display: flex;
+  height: $height-betslip-delete-all;
+  justify-content: flex-end;
+  @include pseudo-content(before, null) {
+    font-size: 2.2rem;
+  }
+}
+
+.c__betslip-action__nav {
+  @extend %border-betslip-actions;
+  @include margin(0, x);
+  @include padding(0, x);
+  display: flex;
+  list-style: none;
+}
+
+.c__betslip__action--proceed,
+.c__betslip__action--extrema {
+  @extend %background-color-panel-betslip-topic;
+  @extend %border-betslip-actions;
+  @include padding($grid-gutter-width / 2,x);
+  color: $color-text-inverse;
+}
+
+.c__betslip__action--proceed {
+  @include border(1px, null, null, null, $border-color-top-betslip-summary-seperator);
+  @include padding(0, $grid-gutter-width / 2,x);
+}
+
+.c__betslip__action--button {
+  @include border(.2rem, null, null, null, $border-color-betslip-topic);
+}
+
+.c__betslip-action__li--active {
+  @include background-color($border-color-betslip-tabs);
+  background-image: none;
+  a[role=tab] {
+    color: #fff;
+  }
+}
+
+.c__betslip-action__label {
+  flex-basis: auto;
+  font-weight:  bold;
+}
+
+.c__betslip-action__recycle {
+  @include border(null, 1px, x, $color-border-default);
+}

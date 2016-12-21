@@ -1,0 +1,74 @@
+.c__betslip-tabs__seperator {
+
+
+  &:last-child {
+    @include border(null, null, .4rem, null, $border-color-betslip-seperator);
+  }
+  +.c__betslip-tabs__seperator {
+    @include border(.4rem, null, null, null, $border-color-betslip-seperator);
+  }
+  .c__betslip-tabs__team-wrap {
+    display:flex;
+    width: 100%
+  }
+  .c__betslip-tabs__team {
+      @extend %betslip-team-wrap;
+  }
+   .c__betslip-tabs__match {
+    @extend %betslip-match;
+    display:flex;
+    flex-wrap: wrap;
+    flex: 1;
+   }
+}
+
+.c__betslip-tabs__detail {
+
+  @extend %betslip-item-setup;
+  @include background-color($background-color-betslip-detail);
+  @include border(1px, null, null, null, $border-color-betslip-detail);
+  +.c__betslip-tabs__detail {
+    @include margin(0);
+  }
+  .c__betslip-tabs__choice:first-child {
+    @extend %betslip-choice;
+  }
+  .c__betslip-tabs__label:first-child {
+    @include padding(null, null, null, 0);
+  }
+}
+
+.c__betslip-tabs__type {
+  font-weight: 400;
+}
+
+.c__betslip-tabs__bank {
+  display: block;
+  flex-shrink: 0;
+  vertical-align: middle;
+  width: 3rem;
+  > a {
+    @include background-color($color-text-inverse);
+    @include border-radius($border-radius-panel,x);
+    @include vertical-align;
+    color: $background-color-betslip;
+    font-weight: 800;
+    height: 2rem;
+    text-align: center;
+    width: 2rem;
+  }
+  +.c__betslip-tabs__team {
+    @include padding(null, null, null, 0);
+  }
+}
+
+.c__betslip-tabs__bank--active {
+  > a {
+    @include background-color($color-betago-first);
+    color: $white;
+  }
+}
+
+.c__betslip-tabs__bet-single {
+  @include margin($grid-gutter-width / 2);
+}

@@ -1,0 +1,27 @@
+
+{{!-- {{>_intro-section}} --}}
+
+
+<div class="c__betslip-summary__content">
+
+	<ul class="t__list--unstyle">
+	
+		{{> cmp_betslip_action--extrema }}
+
+		{{#panel2 "cmp_betslip_summary_seperator" classli="c__betslip-summary__seperator" simple=true label="Einsatz" span="2 x" placeholder="5.000,00" }}{{/panel2 }}
+		
+		{{#panel2 "cmp_betslip_summary_seperator" classli="c__betslip-summary__seperator" simple=true label="Gesamt" button="Max" placeholder="5.000,00"}}{{/panel2 }}
+
+		{{#panel2 "cmp_betslip_summary_seperator" classli="c__betslip-summary__seperator" simple=true label="Gebühr" span="0,0"}}{{/panel2 }}
+
+		{{#panel2 "cmp_betslip_summary_seperator" classli="c__betslip-summary__bill" simple=true label="Gesamt" span="5000,00"}}{{/panel2 }}
+
+
+		{{#panel2 "cmp_betslip_summary_seperator" classli="c__betslip-summary__seperator" simple=true label="Gewinnchance" span="205.173,02"}}{{/panel2 }}
+		
+	</ul>
+	
+</div>
+<!-- cmp_betslip summary END -->
+<!-- ############################ -->
+{{> cmp_betslip_action--proceed }}

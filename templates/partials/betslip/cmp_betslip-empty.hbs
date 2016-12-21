@@ -1,0 +1,26 @@
+<!-- ############################ -->
+<!-- cmp_betslip-empy START -->
+<article class="m__panel m__panel--collapse c__betslip">
+	<header class="m__panel__heading">
+		{{ include("action/cmp_betslip_action--collapse.html", {"name": "Wettschein(0)", "collapse": "betslipCollapse"}) }}
+	</header>
+	<div class="m__panel__body">
+		<div class="m__panel__content">
+			<!-- build:remove:spring -->
+			<div id="betslipCollapse" class="panel-collapse collapse in" tabpanel="" aria-labelledby="headingOne">
+				<!-- /build -->
+				<div class="m__panel-list__body">
+					<div class="m__tabs m__tabs-list">
+						<div class="c__betslip__content tab-content">
+							<p class="c__betslip-empty_message">Ihr Wettschein ist leer</p>
+						</div>
+					</div>
+				</div>
+				<!-- build:remove:spring -->
+			</div>
+			<!-- /build -->
+		</div>
+	</div>
+</article>
+<!-- cmp_betslip-empy END -->
+<!-- ############################ -->

@@ -1,0 +1,44 @@
+.c__betslip-summary__content {
+  @extend %betslip-wrap;
+}
+
+.c__betslip-summary__bill,
+.c__betslip-summary__seperator {
+  @extend %betslip-seperator;
+  @include padding($grid-gutter-width / 2, x);
+}
+
+.c__betslip-summary__bill {
+  @include background-color($color-betago-first);
+  border-color: $color-betago-first;
+  font-weight: bold;
+}
+
+.c__betslip-summary__wrap {
+  @extend %betslip-flexbox;
+  @include padding($grid-gutter-width / 2, 0, x);
+  @include pseudo-selector(("not(:first-child)")) {
+    @include padding($grid-gutter-width / 2);
+  }
+}
+
+.c__betslip-summary__label {
+    @extend %betslip-label;
+}
+
+.c__betslip-summary__input-wrap {
+  @extend %betslip-summary-input;
+  width: $width-input-betslip;
+}
+
+.c__betslip-summary__input--no {
+  @extend %betslip-input-no;
+}
+
+.c__betslip-summary__multiplier {
+  @extend %betslip-cell-right;
+  @include padding(null, $grid-gutter-width);
+  display: flex;
+  flex: 1 0;
+  justify-content: flex-end;
+}

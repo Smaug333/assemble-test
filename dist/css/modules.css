@@ -1,0 +1,3300 @@
+@charset "UTF-8";
+
+/* Jira TPL-372 changend until search panel work; value with serach_panel: 11.6rem*/
+
+/* line 1, ../../src/scss/custom/mixins/_mx_glyphicons.scss */
+
+a.m__offcanvas-button-bar_triangle,
+.m__offcanvas-button-bar--disable .m__offcanvas-button-bar_triangle,
+.m__panel__subheader-filterlink:after, .m__list__versus:before,
+.m__list-bet__selected:before, .m__modal .m__modal__head .m__modal__close:before {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    position: relative;
+}
+
+/**
+ *
+ *  sass mixins for visual styling automation
+ *
+ *  @mixin border-right-betslip
+ *  @mixin gradient-panel-header
+ *  @mixin box-shadow-button-bet
+ *  @mixin button-states-default      - removes webkits default buttons styling
+ *  @mixin border-radius              - easy rounded corners
+ *  @mixin border                     - sets borders
+ *
+ *  @mixin background-aff             - generates proper image url, calls mixin background
+ *  @mixin background-payment         - generating classes for each vendor
+ *  @mixin background-image           - call to background with only 3 parameters, url, width, height
+ *  @mixin background-color           - call to background-generator with only 1 parameter, color
+ *  @mixin background-rgba            - call to background-generator with only 4 parameters, red, green, blue, alpha
+ *  @mixin background-gradient        - call to background-generator with only 1 parameter, w3c valid gradient definition
+ *  @mixin background                 - generates classes for single background images with media queries and height and width dimensiuons.
+                                        call to background-generator with 10 parameters
+ *  @mixin background-generator       - takes up to 10 parameters, setting all possible background values.
+ *
+ */
+
+/**
+ *  every parameter is requiered
+ *  $color:   arrow background-color
+ *  $repeat:  animation repeat
+ *  $speed:   animation speed
+ *  $size:    arrow size
+ *  $radius:  arrow radius
+ *  $rotate:  arrow position rotate
+ */
+
+/**
+ *  every parameter is requiered
+ *  $top:     number or null
+ *  $right:   number or x or null
+ *  $bottom:  number or x or null
+ *  $left:    number or x or null
+ *  $opt:     color
+ */
+
+/*
+ *  different variables for offcanvas widths, depending on breakpoints
+ *
+ */
+
+@-webkit-keyframes offcanvasLeft {
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: 30rem;
+    }
+}
+
+@keyframes offcanvasLeft {
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: 30rem;
+    }
+}
+
+@keyframes offcanvasLeft {
+    0% {
+        -webkit-transform: translate(0, 0);
+                transform: translate(0, 0);
+    }
+
+    100% {
+        -webkit-transform: translate(30rem, 0);
+                transform: translate(30rem, 0);
+    }
+}
+
+@-webkit-keyframes disableOffcanvasLeft {
+    0% {
+        -webkit-transform: translate(30rem, 0);
+                transform: translate(30rem, 0);
+    }
+
+    100% {
+        -webkit-transform: translate(0, 0);
+                transform: translate(0, 0);
+    }
+}
+
+@keyframes disableOffcanvasLeft {
+    0% {
+        -webkit-transform: translate(30rem, 0);
+                transform: translate(30rem, 0);
+    }
+
+    100% {
+        -webkit-transform: translate(0, 0);
+                transform: translate(0, 0);
+    }
+}
+
+@-webkit-keyframes disableOffcanvasRight {
+    0% {
+        -webkit-transform: translate(-30rem, 0);
+                transform: translate(-30rem, 0);
+    }
+
+    100% {
+        -webkit-transform: translate(0, 0);
+                transform: translate(0, 0);
+    }
+}
+
+@keyframes disableOffcanvasRight {
+    0% {
+        -webkit-transform: translate(-30rem, 0);
+                transform: translate(-30rem, 0);
+    }
+
+    100% {
+        -webkit-transform: translate(0, 0);
+                transform: translate(0, 0);
+    }
+}
+
+@-webkit-keyframes offcanvasRight {
+    0% {
+        -webkit-transform: translate(0, 0);
+                transform: translate(0, 0);
+    }
+
+    100% {
+        -webkit-transform: translate(-30rem, 0);
+                transform: translate(-30rem, 0);
+    }
+}
+
+@keyframes offcanvasRight {
+    0% {
+        -webkit-transform: translate(0, 0);
+                transform: translate(0, 0);
+    }
+
+    100% {
+        -webkit-transform: translate(-30rem, 0);
+                transform: translate(-30rem, 0);
+    }
+}
+
+@-webkit-keyframes disableOffcanvasLeftXs {
+    0% {
+        -webkit-transform: translate(87%, 0);
+                transform: translate(87%, 0);
+    }
+
+    100% {
+        -webkit-transform: translate(0, 0);
+                transform: translate(0, 0);
+    }
+}
+
+@keyframes disableOffcanvasLeftXs {
+    0% {
+        -webkit-transform: translate(87%, 0);
+                transform: translate(87%, 0);
+    }
+
+    100% {
+        -webkit-transform: translate(0, 0);
+                transform: translate(0, 0);
+    }
+}
+
+@-webkit-keyframes offcanvasLeftXs {
+    0% {
+        -webkit-transform: translate(0, 0);
+                transform: translate(0, 0);
+    }
+
+    100% {
+        -webkit-transform: translate(100%, 0);
+                transform: translate(100%, 0);
+    }
+}
+
+@keyframes offcanvasLeftXs {
+    0% {
+        -webkit-transform: translate(0, 0);
+                transform: translate(0, 0);
+    }
+
+    100% {
+        -webkit-transform: translate(100%, 0);
+                transform: translate(100%, 0);
+    }
+}
+
+@-webkit-keyframes disableOffcanvasRightXs {
+    0% {
+        -webkit-transform: translate(-87%, 0);
+                transform: translate(-87%, 0);
+    }
+
+    100% {
+        -webkit-transform: translate(0, 0);
+                transform: translate(0, 0);
+    }
+}
+
+@keyframes disableOffcanvasRightXs {
+    0% {
+        -webkit-transform: translate(-87%, 0);
+                transform: translate(-87%, 0);
+    }
+
+    100% {
+        -webkit-transform: translate(0, 0);
+                transform: translate(0, 0);
+    }
+}
+
+@-webkit-keyframes offcanvasRightXs {
+    0% {
+        -webkit-transform: translate(0, 0);
+                transform: translate(0, 0);
+    }
+
+    100% {
+        -webkit-transform: translate(-100%, 0);
+                transform: translate(-100%, 0);
+    }
+}
+
+@keyframes offcanvasRightXs {
+    0% {
+        -webkit-transform: translate(0, 0);
+                transform: translate(0, 0);
+    }
+
+    100% {
+        -webkit-transform: translate(-100%, 0);
+                transform: translate(-100%, 0);
+    }
+}
+
+/* line 1, ../../src/modules/offcanvas/scss/_mod_offcanvas_button.scss */
+
+.m__offcanvas__sitetitle {
+    display: none;
+    font-weight: bold;
+    height: 40px;
+    height: 4rem;
+    text-align: center;
+}
+
+/* line 7, ../../src/modules/offcanvas/scss/_mod_offcanvas_button.scss */
+
+.m__offcanvas__button__container {
+    background-color: White;
+}
+
+/* line 10, ../../src/modules/offcanvas/scss/_mod_offcanvas_button.scss */
+
+.m__offcanvas__button {
+    cursor: pointer;
+    display: block;
+}
+
+/* line 14, ../../src/modules/offcanvas/scss/_mod_offcanvas_button.scss */
+
+.m__offcanvas__button__container {
+    background-color: White;
+    margin-left: -0.5rem;
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+    margin-right: -0.5rem;
+    padding-left: 2.5rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-right: 2.5rem;
+    padding-top: .5rem;
+    padding-top: .5rem;
+    -js-display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: 55px;
+    height: 5.5rem;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+            justify-content: space-between;
+    overflow: hidden;
+}
+
+@-webkit-keyframes offCanvasNavSideEnable {
+    0% {
+        display: none;
+        opacity: 0;
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+    }
+
+    60% {
+        display: none;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+        -webkit-transform: translateX(30rem);
+                transform: translateX(30rem);
+    }
+}
+
+@keyframes offCanvasNavSideEnable {
+    0% {
+        display: none;
+        opacity: 0;
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+    }
+
+    60% {
+        display: none;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+        -webkit-transform: translateX(30rem);
+                transform: translateX(30rem);
+    }
+}
+
+@-webkit-keyframes offCanvasNavSideDisable {
+    0% {
+        display: block;
+        opacity: 1;
+        -webkit-transform: translateX(30rem);
+                transform: translateX(30rem);
+    }
+
+    90% {
+        display: none;
+        opacity: 0;
+        z-index: 0;
+    }
+
+    100% {
+        display: none;
+        overflow: hidden;
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+        z-index: 0;
+    }
+}
+
+@keyframes offCanvasNavSideDisable {
+    0% {
+        display: block;
+        opacity: 1;
+        -webkit-transform: translateX(30rem);
+                transform: translateX(30rem);
+    }
+
+    90% {
+        display: none;
+        opacity: 0;
+        z-index: 0;
+    }
+
+    100% {
+        display: none;
+        overflow: hidden;
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+        z-index: 0;
+    }
+}
+
+/* line 1, ../../src/modules/offcanvas/scss/_mod_offcanvas_button-bar.scss */
+
+.m__offcanvas-button-bar {
+    display: none;
+}
+
+/* line 7, ../../src/modules/offcanvas/scss/_mod_offcanvas_button-bar.scss */
+
+a.m__offcanvas-button-bar_triangle {
+    font-family: "Glyphicons Halflings";
+    top: 1px;
+    vertical-align: top;
+}
+
+/* line 87, ../../src/scss/custom/mixins/_mx_glyphicons.scss */
+
+a.m__offcanvas-button-bar_triangle:before {
+    content: "\e250";
+}
+
+/* line 12, ../../src/modules/offcanvas/scss/_mod_offcanvas_button-bar.scss */
+
+a.m__offcanvas-button-bar_triangle:before {
+    display: inline-block;
+    text-decoration: none;
+}
+
+/* line 19, ../../src/modules/offcanvas/scss/_mod_offcanvas_button-bar.scss */
+
+.m__offcanvas-button-bar--disable .m__offcanvas-button-bar_triangle {
+    font-family: "Glyphicons Halflings";
+    top: 1px;
+    vertical-align: top;
+}
+
+/* line 92, ../../src/scss/custom/mixins/_mx_glyphicons.scss */
+
+.m__offcanvas-button-bar--disable .m__offcanvas-button-bar_triangle:before {
+    content: "\e251";
+}
+
+@-webkit-keyframes offCanvasNavbarButtonHide {
+    0% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes offCanvasNavbarButtonHide {
+    0% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes offCanvasNavbarButtonShow {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes offCanvasNavbarButtonShow {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes offCanvasNavbarButtonenable {
+    0% {
+        -webkit-transform: translateX(-2rem);
+                transform: translateX(-2rem);
+    }
+
+    100% {
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+    }
+}
+
+@keyframes offCanvasNavbarButtonenable {
+    0% {
+        -webkit-transform: translateX(-2rem);
+                transform: translateX(-2rem);
+    }
+
+    100% {
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+    }
+}
+
+@-webkit-keyframes offCanvasNavbarButtondisable {
+    0% {
+        padding-top: 7.2rem;
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+    }
+
+    100% {
+        -webkit-transform: translateX(-2rem);
+                transform: translateX(-2rem);
+    }
+}
+
+@keyframes offCanvasNavbarButtondisable {
+    0% {
+        padding-top: 7.2rem;
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+    }
+
+    100% {
+        -webkit-transform: translateX(-2rem);
+                transform: translateX(-2rem);
+    }
+}
+
+/* line 1, ../../src/modules/panels/scss/_mod_panels.scss */
+
+.m__panel__heading, .m__panel__footer, .m__panel__sub-header {
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+            align-items: center;
+    -js-display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+}
+
+/* line 7, ../../src/modules/panels/scss/_mod_panels.scss */
+
+.m__panel .m__panel__ui__remove, .m__panel .m__panel__ui__toggle {
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* line 12, ../../src/modules/panels/scss/_mod_panels.scss */
+
+.m__panel__content--norm {
+    -js-display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 100%;
+    width: 100%;
+}
+
+/* line 18, ../../src/modules/panels/scss/_mod_panels.scss */
+
+.m__panel {
+    margin-bottom: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* line 25, ../../src/modules/panels/scss/_mod_panels.scss */
+
+.m__panel .m__panel__ui__toggle {
+    padding-right: .5rem;
+    padding-right: .5rem;
+}
+
+/* line 31, ../../src/modules/panels/scss/_mod_panels.scss */
+
+.m__panel__heading {
+    background-color: #efefef;
+    border-left: 1px solid #aeaeae;
+    border-right: 1px solid #aeaeae;
+    border-top: 1px solid #aeaeae;
+    border-bottom: 3px solid #001c6e;
+    padding-left: .5rem;
+    padding-left: .5rem;
+    height: 40px;
+    height: 4rem;
+}
+
+/* line 40, ../../src/modules/panels/scss/_mod_panels.scss */
+
+.m__panel-title {
+    margin: 0;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+            flex-grow: 1;
+    font-size: 16px;
+}
+
+/* line 46, ../../src/modules/panels/scss/_mod_panels.scss */
+
+.m__panel__body {
+    background-color: White;
+}
+
+/* line 160, ../../src/scss/custom/mixins/_mx_service.scss */
+
+.m__panel__body:before {
+    display: table;
+    content: "";
+}
+
+/* line 160, ../../src/scss/custom/mixins/_mx_service.scss */
+
+.m__panel__body:after {
+    clear: both;
+    display: table;
+    content: "";
+}
+
+/* line 60, ../../src/modules/panels/scss/_mod_panels.scss */
+
+.m__panel__footer {
+    background-color: #f1f1f1;
+    padding-left: .5rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    padding-right: .5rem;
+    height: 32px;
+    height: 3.2rem;
+}
+
+/* line 67, ../../src/modules/panels/scss/_mod_panels.scss */
+
+.m__panel__content {
+    padding-left: .5rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    padding-right: .5rem;
+}
+
+/* line 70, ../../src/modules/panels/scss/_mod_panels.scss */
+
+.m__panel__content.m__panel__content--cols {
+    padding: 0;
+}
+
+/* line 75, ../../src/modules/panels/scss/_mod_panels.scss */
+
+.m__panel__content--norm {
+    padding: 20px;
+    padding: 2rem;
+}
+
+/* line 80, ../../src/modules/panels/scss/_mod_panels.scss */
+
+.m__panel__sub-header {
+    background-color: #a3a3a3;
+    padding: 5px;
+    padding: .5rem;
+    box-shadow: inset 0 -1px 0 0 #d6d6d6;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* line 89, ../../src/modules/panels/scss/_mod_panels.scss */
+
+.m__panel__sub-header__column {
+    padding-bottom: .5rem;
+    padding-bottom: .5rem;
+    padding-top: .5rem;
+    padding-top: .5rem;
+}
+
+/* line 93, ../../src/modules/panels/scss/_mod_panels.scss */
+
+.m__panel__sub-header__column:first-child {
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+            align-self: flex-start;
+    -webkit-flex-basis: 0;
+    -ms-flex-preferred-size: 0;
+            flex-basis: 0;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+            flex-grow: 1;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+            flex-shrink: 0;
+}
+
+/* line 99, ../../src/modules/panels/scss/_mod_panels.scss */
+
+.m__panel__sub-header__column:last-child:not(:first-child) {
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+            align-self: flex-start;
+    -webkit-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+}
+
+/* line 105, ../../src/modules/panels/scss/_mod_panels.scss */
+
+.m__panel__sprite-icon {
+    display: inline-block;
+    left: -7px;
+    position: relative;
+}
+
+/* line 111, ../../src/modules/panels/scss/_mod_panels.scss */
+
+.m__panel__subheader-filterlink {
+    color: #333;
+    display: block;
+    height: 100%;
+    text-align: center;
+}
+
+/* line 160, ../../src/scss/custom/mixins/_mx_service.scss */
+
+.m__panel__subheader-filterlink:before {
+    height: 40px;
+    height: 4rem;
+    vertical-align: middle;
+    width: 0;
+    content: "";
+    display: inline-block;
+}
+
+/* line 125, ../../src/modules/panels/scss/_mod_panels.scss */
+
+.m__panel__subheader-filterlink.m__panel__subheader-filterlink--active {
+    background-color: White;
+    box-shadow: 0 3px 0 0 #fff, inset 0 3px 0 0 #001c6e;
+}
+
+/* line 160, ../../src/scss/custom/mixins/_mx_service.scss */
+
+.m__panel__subheader-filterlink.m__panel__subheader-filterlink--active:after {
+    content: "";
+}
+
+/* line 130, ../../src/modules/panels/scss/_mod_panels.scss */
+
+.m__panel__subheader-filterlink:hover, .m__panel__subheader-filterlink:active,
+.m__panel__subheader-filterlink:focus {
+    color: #333;
+}
+
+/* line 160, ../../src/scss/custom/mixins/_mx_service.scss */
+
+.m__panel__subheader-filterlink:after {
+    padding-left: .4rem;
+    padding-left: .4rem;
+    color: #001c6e;
+    font-family: "Glyphicons Halflings";
+    position: relative;
+    top: 3px;
+    top: .3rem;
+    content: "";
+}
+
+/* line 138, ../../src/modules/panels/scss/_mod_panels.scss */
+
+.m__panel__subheader-navlink {
+    padding: 5px 15px 5px 15px;
+    padding: .5rem 1.5rem .5rem 1.5rem;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+            align-items: center;
+    color: White;
+    -js-display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+}
+
+/* line 173, ../../src/scss/custom/mixins/_mx_service.scss */
+
+.m__panel__subheader-navlink:hover, .m__panel__subheader-navlink:active,
+.m__panel__subheader-navlink:visited, .m__panel__subheader-navlink:focus,
+.m__panel__subheader-navlinklink {
+    color: White;
+}
+
+/* line 149, ../../src/modules/panels/scss/_mod_panels.scss */
+
+.m__panel__subheader-navlink.m__panel__subheader-navlink--active {
+    background-color: #fff;
+    color: #333;
+}
+
+/* line 153, ../../src/modules/panels/scss/_mod_panels.scss */
+
+.m__panel__subheader-navlink.m__panel__subheader-navlink--active:after {
+    display: none;
+}
+
+/* line 162, ../../src/modules/panels/scss/_mod_panels.scss */
+
+.m__panel--collapse .m__panel__heading {
+    border: 0 transparent solid;
+    background-image: linear-gradient(to bottom, #ccc 0%, #cecece 11%, #eee 100%);
+}
+
+/* line 166, ../../src/modules/panels/scss/_mod_panels.scss */
+
+.m__panel--collapse .m__panel__content {
+    padding: 0;
+}
+
+/* line 169, ../../src/modules/panels/scss/_mod_panels.scss */
+
+.m__panel--collapse .m__panel__body {
+    border-left: 0 solid transparent;
+    border-right: 0 solid transparent;
+}
+
+/* line 174, ../../src/modules/panels/scss/_mod_panels.scss */
+
+.m__panel__collapse-link {
+    padding-left: 1rem;
+    padding-left: 1rem;
+    font-size: 18px;
+    font-size: 1.8rem;
+}
+
+/* line 1, ../../src/modules/navigations/scss/_mod_navlist-user.scss */
+
+.m__navlist__user-wrap {
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+            align-items: center;
+    -js-display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+            flex-grow: 1;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+            flex-shrink: 0;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+}
+
+/* line 8, ../../src/modules/navigations/scss/_mod_navlist-user.scss */
+
+.m__navlist__user li > a, .m__navlist__client > a {
+    color: White;
+    line-height: 24px;
+    line-height: 2.4rem;
+}
+
+/* line 12, ../../src/modules/navigations/scss/_mod_navlist-user.scss */
+
+.m__navlist__user-wrap {
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+            justify-content: flex-end;
+}
+
+/* line 16, ../../src/modules/navigations/scss/_mod_navlist-user.scss */
+
+.m__navlist__user {
+    margin: 0;
+    padding: 0;
+    -js-display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+}
+
+/* line 21, ../../src/modules/navigations/scss/_mod_navlist-user.scss */
+
+.m__navlist__user li {
+    -js-display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+}
+
+/* line 24, ../../src/modules/navigations/scss/_mod_navlist-user.scss */
+
+.m__navlist__user li > a {
+    padding: 0 8px;
+    padding: 0 .8rem;
+}
+
+/* line 28, ../../src/modules/navigations/scss/_mod_navlist-user.scss */
+
+.m__navlist__user li:first-child > a {
+    padding-left: 0;
+}
+
+/* line 32, ../../src/modules/navigations/scss/_mod_navlist-user.scss */
+
+.m__navlist__user .m__navlist__user-glyphs {
+    padding-right: 2px;
+}
+
+/* line 160, ../../src/scss/custom/mixins/_mx_service.scss */
+
+.m__navlist__user .m__navlist__user-glyphs:before {
+    color: White;
+}
+
+/* line 39, ../../src/modules/navigations/scss/_mod_navlist-user.scss */
+
+.m__navlist__client {
+    padding-left: .8rem;
+    padding-left: .8rem;
+}
+
+/* line 160, ../../src/scss/custom/mixins/_mx_service.scss */
+
+.m__navlist__client .m__navlist__user-glyphs:before {
+    padding-right: .2rem;
+    padding-right: .2rem;
+    color: White;
+}
+
+/* line 51, ../../src/modules/navigations/scss/_mod_navlist-user.scss */
+
+.m__navlist__user-time {
+    color: White;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+            flex-grow: 1;
+    font-size: 12px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* line 58, ../../src/modules/navigations/scss/_mod_navlist-user.scss */
+
+.m__navlist__settings {
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+            flex-grow: 1;
+    text-align: right;
+}
+
+/* line 1, ../../src/modules/tabs/scss/_mod_tabs.scss */
+
+.m__tabs {
+    width: 100%;
+}
+
+/* line 6, ../../src/modules/tabs/scss/_mod_tabs.scss */
+
+.m__tabs .m__tabs-list__li {
+    /**
+   * TODO: CLEAN UP BORDER HANDLING
+   * ACTIVE - INACTIVE STYLE
+   */
+    background-image: linear-gradient(to bottom, #f3f3f3 0%, #efefef 7%, #ededed 26%, #dcdedd 100%);
+    border-bottom: solid 1px #aeaeae;
+    border-right: solid 1px #aeaeae;
+    border-top: solid 1px #aeaeae;
+}
+
+/* line 23, ../../src/modules/tabs/scss/_mod_tabs.scss */
+
+.m__tabs .m__tabs-list__li:last-child {
+    border-right: 0;
+}
+
+/* line 27, ../../src/modules/tabs/scss/_mod_tabs.scss */
+
+.m__tabs .m__tabs-list__li.active > a, .m__tabs .m__tabs-list__li > a {
+    border: 0;
+    outline: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+/* line 37, ../../src/modules/tabs/scss/_mod_tabs.scss */
+
+.m__tabs .m__tabs-list__li.active > a:hover,
+.m__tabs .m__tabs-list__li > a:hover {
+    border: 0;
+    outline: 0;
+}
+
+/* line 41, ../../src/modules/tabs/scss/_mod_tabs.scss */
+
+.m__tabs .m__tabs-list__li.active > a:active,
+.m__tabs .m__tabs-list__li > a:active {
+    border: 0;
+    outline: 0;
+}
+
+/* line 45, ../../src/modules/tabs/scss/_mod_tabs.scss */
+
+.m__tabs .m__tabs-list__li.active > a:focus,
+.m__tabs .m__tabs-list__li > a:focus {
+    border: 0;
+    outline: 0;
+}
+
+/* line 49, ../../src/modules/tabs/scss/_mod_tabs.scss */
+
+.m__tabs .m__tabs-list__li.active > a:visited,
+.m__tabs .m__tabs-list__li > a:visited {
+    border: 0;
+    outline: 0;
+}
+
+/* line 64, ../../src/modules/tabs/scss/_mod_tabs.scss */
+
+.m__tabs .m__tabs__body {
+    padding-left: 0;
+}
+
+/* line 1, ../../src/modules/lists/scss/_mod_list.scss */
+
+.m__list {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* line 8, ../../src/modules/lists/scss/_mod_list.scss */
+
+.m__list__row:nth-child(even) {
+    background-color: #f1f1f1;
+}
+
+/* line 11, ../../src/modules/lists/scss/_mod_list.scss */
+
+.m__list__row:nth-child(odd) {
+    background-color: White;
+}
+
+/* line 1, ../../src/modules/lists/scss/_mod_list-match.scss */
+
+.m__list__match {
+    -js-display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+               flex-wrap: wrap;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+}
+
+/* line 6, ../../src/modules/lists/scss/_mod_list-match.scss */
+
+.m__list__match {
+    font-weight: normal;
+    /*FIT MODIFIER*/
+}
+
+/* line 9, ../../src/modules/lists/scss/_mod_list-match.scss */
+
+.m__list__match.m__list__match--live {
+    /*LIVE MODIFIER*/
+}
+
+/* line 11, ../../src/modules/lists/scss/_mod_list-match.scss */
+
+.m__list__match.m__list__match--live .m__list__team {
+    -js-display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+/* line 195, ../../src/scss/custom/mixins/_mx_service.scss */
+
+.m__list__match.m__list__match--live .m__list__team:first-child {
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+            justify-content: flex-end;
+}
+
+/* line 195, ../../src/scss/custom/mixins/_mx_service.scss */
+
+.m__list__match.m__list__match--live .m__list__team-name:first-child {
+    text-align: right;
+}
+
+/* line 24, ../../src/modules/lists/scss/_mod_list-match.scss */
+
+.m__list__match.m__list__match--fit {
+    font-weight: 700;
+}
+
+/* line 26, ../../src/modules/lists/scss/_mod_list-match.scss */
+
+.m__list__match.m__list__match--fit .m__list__team {
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+            align-self: center;
+    -webkit-flex: 0 1 auto;
+        -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+    width: auto;
+}
+
+/* line 30, ../../src/modules/lists/scss/_mod_list-match.scss */
+
+.m__list__match.m__list__match--fit .m__list__team ~ .m__list__team {
+    padding-right: .2rem;
+    padding-right: .2rem;
+}
+
+/* line 36, ../../src/modules/lists/scss/_mod_list-match.scss */
+
+.m__list__live {
+    background-color: #2876dd;
+    border-radius: .25rem;
+    padding: 2px 5px 1px 5px;
+    padding: .2rem .5rem .1rem .5rem;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+            align-self: center;
+    color: White;
+    font-size: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+/* line 45, ../../src/modules/lists/scss/_mod_list-match.scss */
+
+.m__list__team {
+    width: calc(50% - (5.5rem / 2));
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+}
+
+/* line 49, ../../src/modules/lists/scss/_mod_list-match.scss */
+
+.m__list__result {
+    -js-display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex: 0 0 55px;
+        -ms-flex: 0 0 55px;
+            flex: 0 0 55px;
+    -webkit-flex: 0 0 5.5rem;
+        -ms-flex: 0 0 5.5rem;
+            flex: 0 0 5.5rem;
+    font-weight: 700;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+            justify-content: center;
+}
+
+/* line 55, ../../src/modules/lists/scss/_mod_list-match.scss */
+
+.m__list__team-ticker {
+    padding-left: .5rem;
+    padding-left: .5rem;
+    -js-display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+/* line 195, ../../src/scss/custom/mixins/_mx_service.scss */
+
+.m__list__team-ticker:first-of-type {
+    padding-left: 0;
+    padding-right: .5rem;
+    padding-right: .5rem;
+}
+
+/* line 62, ../../src/modules/lists/scss/_mod_list-match.scss */
+
+.m__list__team-name {
+    -js-display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+/* line 65, ../../src/modules/lists/scss/_mod_list-match.scss */
+
+.m__list__versus {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    text-indent: -20000px;
+    text-indent: -2000rem;
+    vertical-align: middle;
+    width: 15px;
+    width: 1.5rem;
+}
+
+/* line 160, ../../src/scss/custom/mixins/_mx_service.scss */
+
+.m__list__versus:before {
+    font-size: 8px;
+    font-size: .8rem;
+    line-height: 100%;
+    text-align: center;
+    text-indent: 0;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    width: 100%;
+    color: inherit;
+    display: table-cell;
+    font-family: "Glyphicons Halflings";
+    position: absolute;
+    top: 50%;
+    vertical-align: middle;
+    content: "−";
+}
+
+/* line 1, ../../src/modules/lists/scss/_mod_list-bet.scss */
+
+.m__list-bet__filter, .m__list-bet__row, .m__list-bet__buttons-row {
+    -js-display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+}
+
+/* line 5, ../../src/modules/lists/scss/_mod_list-bet.scss */
+
+.m__list-bet__icon, .m__list-bet__icons-bar .m__list-bet__icons__list {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* line 9, ../../src/modules/lists/scss/_mod_list-bet.scss */
+
+.m__list-bet__head {
+    background-color: White;
+    border-bottom: 1px solid #cecece;
+    border-top: 1px solid #cecece;
+    margin-left: -0.5rem;
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+    margin-right: -0.5rem;
+    padding-bottom: .3rem;
+    padding-bottom: .3rem;
+    padding-left: .5rem;
+    padding-left: .5rem;
+    padding-top: .5rem;
+    padding-top: .5rem;
+    font-size: 12px;
+    font-size: 1.2rem;
+    line-height: 1em;
+}
+
+/* line 160, ../../src/scss/custom/mixins/_mx_service.scss */
+
+.m__list-bet__selected:before {
+    padding-right: .5rem;
+    padding-right: .5rem;
+    font-size: 12px;
+    font-size: 1.2rem;
+    color: #001c6e;
+    font-family: "Glyphicons Halflings";
+    position: relative;
+    top: 1px;
+    content: "";
+}
+
+/* line 24, ../../src/modules/lists/scss/_mod_list-bet.scss */
+
+.m__list-bet__filter {
+    padding-bottom: .5rem;
+    padding-bottom: .5rem;
+    padding-top: .5rem;
+    padding-top: .5rem;
+}
+
+/* line 27, ../../src/modules/lists/scss/_mod_list-bet.scss */
+
+.m__list-bet__filter span {
+    color: #001c6e;
+}
+
+/* line 29, ../../src/modules/lists/scss/_mod_list-bet.scss */
+
+.m__list-bet__filter span:first-child {
+    padding-right: .5rem;
+    padding-right: .5rem;
+}
+
+/* line 34, ../../src/modules/lists/scss/_mod_list-bet.scss */
+
+.m__list-bet__row {
+    margin-left: -0.5rem;
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+    margin-right: -0.5rem;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+/* line 38, ../../src/modules/lists/scss/_mod_list-bet.scss */
+
+.m__list-bet__row:nth-child(even) {
+    background-color: #f1f1f1;
+}
+
+/* line 41, ../../src/modules/lists/scss/_mod_list-bet.scss */
+
+.m__list-bet__row:nth-child(odd) {
+    background-color: White;
+}
+
+/* line 45, ../../src/modules/lists/scss/_mod_list-bet.scss */
+
+.m__list-bet__item {
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+            flex-grow: 1;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+            flex-shrink: 0;
+}
+
+/* line 48, ../../src/modules/lists/scss/_mod_list-bet.scss */
+
+.m__list-bet__item.m__list-bet__first {
+    -webkit-flex: 0 0 70px;
+        -ms-flex: 0 0 70px;
+            flex: 0 0 70px;
+}
+
+/* line 160, ../../src/scss/custom/mixins/_mx_service.scss */
+
+.m__list-bet__arrow-collapse:after {
+    padding-right: 0;
+    float: none;
+    top: 0;
+}
+
+/* line 58, ../../src/modules/lists/scss/_mod_list-bet.scss */
+
+.m__list-bet__arrow-collapse span {
+    display: none;
+}
+
+/* line 62, ../../src/modules/lists/scss/_mod_list-bet.scss */
+
+.m__list-bet__buttons-row {
+    padding-left: .5rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    padding-right: .5rem;
+    padding-top: .5rem;
+    padding-top: .5rem;
+}
+
+/* line 65, ../../src/modules/lists/scss/_mod_list-bet.scss */
+
+.m__list-bet__buttons-row:last-of-type {
+    padding-bottom: .5rem;
+    padding-bottom: .5rem;
+}
+
+/* line 68, ../../src/modules/lists/scss/_mod_list-bet.scss */
+
+.m__list-bet__buttons-row.m__list-bet__buttons-row--right {
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+            justify-content: flex-end;
+}
+
+/* line 72, ../../src/modules/lists/scss/_mod_list-bet.scss */
+
+.m__list-bet__controls-icon {
+    -webkit-flex: 0 0 16px;
+        -ms-flex: 0 0 16px;
+            flex: 0 0 16px;
+}
+
+/* line 75, ../../src/modules/lists/scss/_mod_list-bet.scss */
+
+.m__list-bet__result {
+    display: inline-block;
+    text-indent: 10px;
+    text-indent: 1rem;
+}
+
+/* line 79, ../../src/modules/lists/scss/_mod_list-bet.scss */
+
+.m__list-bet__icon {
+    text-decoration: none;
+}
+
+/* line 83, ../../src/modules/lists/scss/_mod_list-bet.scss */
+
+.m__list-bet__icons-bar {
+    margin: 0;
+    padding: 0;
+    -js-display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    list-style: none;
+}
+
+/* line 91, ../../src/modules/lists/scss/_mod_list-bet.scss */
+
+.m__list-bet__icons-bar .m__list-bet__icons-item {
+    background-color: #e2e2e2;
+    border-color: #aca19b;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-radius: 4px;
+    margin: 5px 5px;
+    margin: .5rem .5rem;
+    padding: 5px 10px;
+    padding: .5rem 1rem;
+    cursor: pointer;
+    display: inline-block;
+    height: 35px;
+    height: 3.5rem;
+    text-decoration: none;
+}
+
+/* line 195, ../../src/scss/custom/mixins/_mx_service.scss */
+
+.m__list-bet__icons-bar .m__list-bet__icons-item:active,
+.m__list-bet__icons-bar .m__list-bet__icons-item:visited,
+.m__list-bet__icons-bar .m__list-bet__icons-item:focus {
+    color: #333;
+}
+
+/* line 195, ../../src/scss/custom/mixins/_mx_service.scss */
+
+.m__list-bet__icons-bar .m__list-bet__icons-item:hover {
+    background-color: #ededed;
+    color: #333;
+}
+
+/* line 110, ../../src/modules/lists/scss/_mod_list-bet.scss */
+
+.m__list-bet__btn-text {
+    width: 45px;
+    width: 4.5rem;
+}
+
+/* line 112, ../../src/modules/lists/scss/_mod_list-bet.scss */
+
+.m__list-bet__btn-text.m__list-bet__btn-text--full {
+    padding-left: 0;
+    padding-right: 1rem;
+    padding-right: 1rem;
+    padding-top: 0;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+            align-self: center;
+    -js-display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: auto;
+}
+
+/* line 119, ../../src/modules/lists/scss/_mod_list-bet.scss */
+
+.m__list-bet__details {
+    width: 100%;
+}
+
+/* line 145, ../../src/modules/lists/scss/_mod_list-bet.scss */
+
+.m__list-bet__selection {
+    -js-display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+/* line 149, ../../src/modules/lists/scss/_mod_list-bet.scss */
+
+.m__list-bet__buttons-queue {
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+            flex-grow: 1;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+            flex-shrink: 0;
+}
+
+/* line 2, ../../src/modules/lists/scss/_mod_list-bet_live.scss */
+
+.m__list-bet__live-row:nth-child(odd) {
+    background-color: White;
+}
+
+/* line 5, ../../src/modules/lists/scss/_mod_list-bet_live.scss */
+
+.m__list-bet__live-row:nth-child(even) {
+    background-color: #f1f1f1;
+}
+
+/* line 1, ../../src/modules/lists/scss/_mod_list-filter.scss */
+
+.m__list-filter {
+    overflow: hidden;
+}
+
+/* line 5, ../../src/modules/lists/scss/_mod_list-filter.scss */
+
+.m__list-filter__item--active {
+    box-shadow: inset 0 -2px 0 0 #001c6e;
+    color: #001c6e;
+}
+
+/* line 10, ../../src/modules/lists/scss/_mod_list-filter.scss */
+
+.m__list-filter__wrap1 {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+
+/* line 16, ../../src/modules/lists/scss/_mod_list-filter.scss */
+
+.m__list-filter__wrap2 {
+    border-collapse: collapse;
+    display: table;
+    height: 100%;
+    table-layout: fixed;
+    width: 100%;
+}
+
+/* line 24, ../../src/modules/lists/scss/_mod_list-filter.scss */
+
+.m__list-filter__cell1 {
+    display: table-cell;
+    vertical-align: top;
+}
+
+/* line 30, ../../src/modules/lists/scss/_mod_list-filter.scss */
+
+.m__list-filter__cell2 {
+    background-color: White;
+    border-bottom-width: 0;
+    border-color: #cecece;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-style: solid;
+    border-top-width: 1px;
+    cursor: pointer;
+    display: table-cell;
+    padding: 5px 10px;
+    vertical-align: middle;
+}
+
+/* line 42, ../../src/modules/lists/scss/_mod_list-filter.scss */
+
+.m__list-filter__cell2:hover {
+    color: #001c6e;
+}
+
+/* line 152, ../../src/modules/lists/scss/_mod_list-filter.scss */
+
+.m__list-filter__item--inactive {
+    cursor: default;
+}
+
+/* line 155, ../../src/modules/lists/scss/_mod_list-filter.scss */
+
+.m__list-filter__item--inactive a, .m__list-filter__item--inactive:hover {
+    color: #dcdcdc;
+    cursor: default;
+}
+
+/* line 1, ../../src/modules/modals/scss/_mod_modal.scss */
+
+.m__modal {
+    position: relative;
+    z-index: 151;
+}
+
+/* line 4, ../../src/modules/modals/scss/_mod_modal.scss */
+
+.m__modal .m__modal__wrap {
+    margin-left: 50%;
+    position: fixed;
+    top: 20px;
+    top: 2rem;
+    bottom: 10px;
+    bottom: 1rem;
+    left: -50%;
+    right: 0;
+}
+
+/* line 20, ../../src/modules/modals/scss/_mod_modal.scss */
+
+.m__modal .m__modal__content {
+    background-color: White;
+    margin: 0 auto;
+    -js-display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: auto;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+            justify-content: space-between;
+    max-height: calc(100vh - 4rem);
+    position: relative;
+}
+
+/* line 29, ../../src/modules/modals/scss/_mod_modal.scss */
+
+.m__modal .m__modal__content.m__modal__content--center {
+    text-align: center;
+}
+
+/* line 31, ../../src/modules/modals/scss/_mod_modal.scss */
+
+.m__modal .m__modal__content.m__modal__content--center .m__modal__foot {
+    text-align: center;
+}
+
+/* line 34, ../../src/modules/modals/scss/_mod_modal.scss */
+
+.m__modal .m__modal__content.m__modal__content--center .m__modal__head {
+    border-bottom: none;
+}
+
+/* line 40, ../../src/modules/modals/scss/_mod_modal.scss */
+
+.m__modal.m__modal--sm .m__modal__content {
+    max-height: inherit;
+    width: 300px;
+    width: 30rem;
+}
+
+/* line 50, ../../src/modules/modals/scss/_mod_modal.scss */
+
+.m__modal.m__modal--md .m__modal__content {
+    max-height: auto;
+    width: 600px;
+    width: 60rem;
+}
+
+/* line 60, ../../src/modules/modals/scss/_mod_modal.scss */
+
+.m__modal.m__modal--lg .m__modal__content {
+    height: calc(100vh - 4rem);
+    width: 900px;
+    width: 90rem;
+}
+
+/* line 87, ../../src/modules/modals/scss/_mod_modal.scss */
+
+.m__modal .m__modal__head {
+    border-bottom: 1px solid #dcdcdc;
+}
+
+/* line 89, ../../src/modules/modals/scss/_mod_modal.scss */
+
+.m__modal .m__modal__head h4 {
+    padding: 15px 25px;
+    padding: 1.5rem 2.5rem;
+    margin: 0;
+    font-size: 18px;
+    font-size: 1.8rem;
+}
+
+/* line 94, ../../src/modules/modals/scss/_mod_modal.scss */
+
+.m__modal .m__modal__head .m__modal__close {
+    background-color: #001c6e;
+    border-radius: 1.1rem;
+    color: White;
+    cursor: pointer;
+    font-size: 21px;
+    font-size: 2.1rem;
+    height: 23px;
+    height: 2.3rem;
+    line-height: 23px;
+    line-height: 2.3rem;
+    position: absolute;
+    right: -8px;
+    right: -0.8rem;
+    text-align: center;
+    text-shadow: none;
+    top: -8px;
+    top: -0.8rem;
+    width: 23px;
+    width: 2.3rem;
+}
+
+/* line 195, ../../src/scss/custom/mixins/_mx_service.scss */
+
+.m__modal .m__modal__head .m__modal__close:link,
+.m__modal .m__modal__head .m__modal__close:visited,
+.m__modal .m__modal__head .m__modal__close:hover,
+.m__modal .m__modal__head .m__modal__close:active,
+.m__modal .m__modal__head .m__modal__close:focus {
+    -webkit-appearance: none;
+    opacity: 1;
+    outline: none;
+}
+
+/* line 160, ../../src/scss/custom/mixins/_mx_service.scss */
+
+.m__modal .m__modal__head .m__modal__close:before {
+    font-size: 12px;
+    font-size: 1.2rem;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    color: inherit;
+    font-family: "Glyphicons Regular";
+    position: absolute;
+    top: 50%;
+    content: "";
+}
+
+/* line 120, ../../src/modules/modals/scss/_mod_modal.scss */
+
+.m__modal .m__modal__foot {
+    border-top: 1px solid #ddd;
+    -webkit-flex-grow: 0;
+    -ms-flex-positive: 0;
+            flex-grow: 0;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+            flex-shrink: 0;
+    padding: 15px 25px 15px 25px;
+    padding: 1.5rem 2.5rem 1.5rem 2.5rem;
+    text-align: left;
+}
+
+/* line 126, ../../src/modules/modals/scss/_mod_modal.scss */
+
+.m__modal .m__modal__foot.m__modal__foot--accent {
+    background-color: #efefef;
+    border-top: none;
+}
+
+/* line 131, ../../src/modules/modals/scss/_mod_modal.scss */
+
+.m__modal .m__modal__scrollbar {
+    -webkit-flex-basis: auto;
+    -ms-flex-preferred-size: auto;
+            flex-basis: auto;
+    -webkit-flex-shrink: 1;
+    -ms-flex-negative: 1;
+            flex-shrink: 1;
+    overflow-y: auto;
+}
+
+/* line 136, ../../src/modules/modals/scss/_mod_modal.scss */
+
+.m__modal .m__modal__body {
+    padding: 25px;
+    padding: 2.5rem;
+}
+
+/* line 140, ../../src/modules/modals/scss/_mod_modal.scss */
+
+.m__modal.m__modal-scroll .m__modal__body {
+    max-height: calc(100vh - 4rem);
+    overflow-y: scroll;
+}
+
+/* line 1, ../../src/modules/forms/scss/_mod_form-user.scss */
+
+.m__form-user__edit {
+    padding: 15px 10px 0 10px;
+    padding: 1.5rem 1rem 0 1rem;
+    margin: 0;
+}
+
+/* line 6, ../../src/modules/forms/scss/_mod_form-user.scss */
+
+.m__form-user__edit-rlabel {
+    padding-bottom: 7.5px;
+    padding-bottom: .75rem;
+}
+
+/* line 10, ../../src/modules/forms/scss/_mod_form-user.scss */
+
+.m__form-user__edit-leftcol, .m__form-user__edit-rightcol {
+    padding: 0;
+}
+
+/* line 15, ../../src/modules/forms/scss/_mod_form-user.scss */
+
+.m__form-user__edit-radio {
+    min-height: 54px;
+}
+
+/* line 19, ../../src/modules/forms/scss/_mod_form-user.scss */
+
+.m__form-user__edit-birth {
+    margin-bottom: 15px;
+    margin-bottom: 1.5rem;
+}
+
+/* line 21, ../../src/modules/forms/scss/_mod_form-user.scss */
+
+.m__form-user__edit-birth input {
+    text-align: center;
+}
+
+/* line 24, ../../src/modules/forms/scss/_mod_form-user.scss */
+
+.m__form-user__edit-birth label {
+    font-weight: normal;
+    margin-bottom: 0;
+    margin-left: 5px;
+}
+
+/* line 160, ../../src/scss/custom/mixins/_mx_service.scss */
+
+.m__form-user__circle-mark:before {
+    color: #001c6e;
+}
+
+/* line 1, ../../src/modules/forms/scss/_mod_form-login.scss */
+
+.m__form-login {
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+            align-items: center;
+    -js-display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+}
+
+/* line 10, ../../src/modules/forms/scss/_mod_form-login.scss */
+
+.m__form-login__content {
+    padding: 15px 10px 0 10px;
+    padding: 1.5rem 1rem 0 1rem;
+    margin: 0;
+    -js-display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+            justify-content: center;
+}
+
+/* line 17, ../../src/modules/forms/scss/_mod_form-login.scss */
+
+.m__form-login__icon {
+    background-color: White;
+    padding-bottom: 0;
+    padding-top: 0;
+    color: #a3a3a3;
+    font-size: 18px;
+    font-size: 1.8rem;
+}
+
+/* line 195, ../../src/scss/custom/mixins/_mx_service.scss */
+
+.m__form-login__icon:first-child {
+    border-bottom: 1px solid #aca19b;
+    border-left: 1px solid #aca19b;
+    border-top: 1px solid #aca19b;
+}
+
+/* line 195, ../../src/scss/custom/mixins/_mx_service.scss */
+
+.m__form-login__icon:last-child {
+    border-bottom: 1px solid #aca19b;
+    border-right: 1px solid #aca19b;
+    border-top: 1px solid #aca19b;
+}
+
+/* line 28, ../../src/modules/forms/scss/_mod_form-login.scss */
+
+.m__form-login__icon + input {
+    border-left: 0 solid #aca19b;
+    border-right: 1px solid #aca19b;
+}
+
+/* line 30, ../../src/modules/forms/scss/_mod_form-login.scss */
+
+.m__form-login__icon + input:focus {
+    border-color: #aca19b;
+}
+
+/**
+ *  correction for bootstrap inline-form on line-break
+ */
+
+/* line 40, ../../src/modules/forms/scss/_mod_form-login.scss */
+
+.m__form-login .m__form-login__group {
+    margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+/* line 8, ../../src/modules/forms/scss/_mod_form-alert.scss */
+
+[class^="m__form-alert--"] {
+    border: 1px transparent solid;
+    border-radius: .4rem;
+    margin: 15px 0 15px 0;
+    margin: 1.5rem 0 1.5rem 0;
+    padding: 10px 15px 10px 10px;
+    padding: 1rem 1.5rem 1rem 1rem;
+    opacity: 0;
+    position: relative;
+    transition: opacity .15s linear;
+    width: 100%;
+}
+
+/* line 27, ../../src/modules/forms/scss/_mod_form-alert.scss */
+
+[class^="m__form-alert--"].m__form-alert--error {
+    background-color: #f2dede;
+    border: 1px #d8000c solid;
+    color: #000;
+    opacity: 1;
+}
+
+/* line 30, ../../src/modules/forms/scss/_mod_form-alert.scss */
+
+[class^="m__form-alert--"].m__form-alert--success {
+    background-color: #dff0d8;
+    border: 1px #85b200 solid;
+    color: #000;
+    opacity: 1;
+}
+
+/* line 33, ../../src/modules/forms/scss/_mod_form-alert.scss */
+
+[class^="m__form-alert--"].m__form-alert--warning {
+    background-color: #feefb3;
+    border: 1px #9f6000 solid;
+    color: #000;
+    opacity: 1;
+}
+
+/* line 36, ../../src/modules/forms/scss/_mod_form-alert.scss */
+
+[class^="m__form-alert--"].m__form-alert--info {
+    background-color: #d9edf7;
+    border: 1px #b8c3c5 solid;
+    color: #000;
+    opacity: 1;
+}
+
+/* line 39, ../../src/modules/forms/scss/_mod_form-alert.scss */
+
+[class^="m__form-alert--"].m__form-alert--modal {
+    margin-top: -1rem;
+    margin-top: -1rem;
+}
+
+/* line 42, ../../src/modules/forms/scss/_mod_form-alert.scss */
+
+[class^="m__form-alert--"] .m__form-alert__close {
+    padding: 0;
+    color: inherit;
+    cursor: pointer;
+    font-size: 18px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 20px;
+    line-height: 2rem;
+    opacity: .7;
+    position: absolute;
+    right: 5px;
+    right: .5rem;
+    top: 10px;
+    top: 1rem;
+    width: auto;
+}
+
+/* line 195, ../../src/scss/custom/mixins/_mx_service.scss */
+
+[class^="m__form-alert--"] .m__form-alert__close:hover {
+    opacity: 1;
+}
+
+/* line 1, ../../src/modules/pagination/scss/_mod_pagination.scss */
+
+.m__pagination__wrap {
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* line 10, ../../src/modules/pagination/scss/_mod_pagination.scss */
+
+.m__pagination {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    display: inline-table;
+    height: 32px;
+    height: 3.2rem;
+}
+
+/* line 15, ../../src/modules/pagination/scss/_mod_pagination.scss */
+
+.m__pagination .m__pagination__li {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/* line 18, ../../src/modules/pagination/scss/_mod_pagination.scss */
+
+.m__pagination .m__pagination__li.m__pagination__li--active {
+    font-weight: 700;
+}
+
+/* line 20, ../../src/modules/pagination/scss/_mod_pagination.scss */
+
+.m__pagination .m__pagination__li.m__pagination__li--active .m__pagination__link {
+    cursor: default;
+}
+
+/* line 25, ../../src/modules/pagination/scss/_mod_pagination.scss */
+
+.m__pagination .m__pagination__li.m__pagination__li--inactive .m__pagination__link {
+    cursor: not-allowed;
+}
+
+/* line 160, ../../src/scss/custom/mixins/_mx_service.scss */
+
+.m__pagination .m__pagination__li.m__pagination__li--inactive .m__pagination__link:before {
+    color: #a3a3a3;
+}
+
+/* line 33, ../../src/modules/pagination/scss/_mod_pagination.scss */
+
+.m__pagination .m__pagination__link {
+    padding: 0 12px;
+    padding: 0 1.2rem;
+    color: #000;
+    display: inline-block;
+    line-height: 1.42857;
+    position: relative;
+    vertical-align: top;
+}
+
+/* line 40, ../../src/modules/pagination/scss/_mod_pagination.scss */
+
+.m__pagination .m__pagination__link.m__pagination__link--action {
+    padding: 0 6px;
+    padding: 0 .6rem;
+    color: transparent;
+    font-size: 0;
+    line-height: 0;
+    vertical-align: middle;
+}
+
+/* line 160, ../../src/scss/custom/mixins/_mx_service.scss */
+
+.m__pagination .m__pagination__link.m__pagination__link--action:before {
+    color: #001c6e;
+    font-size: 30px;
+    font-size: 3rem;
+    position: relative;
+}
+
+/* line 160, ../../src/scss/custom/mixins/_mx_service.scss */
+
+.m__pagination .m__pagination__link.m__pagination__arrow-left-double:before {
+    left: 0;
+    content: "«";
+}
+
+/* line 160, ../../src/scss/custom/mixins/_mx_service.scss */
+
+.m__pagination .m__pagination__link.m__pagination__arrow-left:before {
+    left: 0;
+    content: "‹";
+}
+
+/* line 160, ../../src/scss/custom/mixins/_mx_service.scss */
+
+.m__pagination .m__pagination__link.m__pagination__arrow-right:before {
+    right: 0;
+    content: "›";
+}
+
+/* line 160, ../../src/scss/custom/mixins/_mx_service.scss */
+
+.m__pagination .m__pagination__link.m__pagination__arrow-right-double:before {
+    right: 0;
+    content: "»";
+}
+
+/* line 1, ../../src/modules/language/scss/_mod_language.scss */
+
+.m__language__wrap > .m__language__select {
+    border-radius: 4px;
+    float: right;
+    margin-bottom: 15px;
+    padding: 0 3.75px;
+    padding: 0 .375rem;
+}
+
+/* line 14, ../../src/scss/custom/mixins/_mx_layout.scss */
+
+.m__language__wrap > .m__language__select:before {
+    content: " ";
+    display: table;
+}
+
+/* line 18, ../../src/scss/custom/mixins/_mx_layout.scss */
+
+.m__language__wrap > .m__language__select:after {
+    clear: both;
+}
+
+@media (max-width: 1199px) {
+    /* line 16, ../../src/modules/offcanvas/scss/_mod_offcanvas.scss */
+
+    .m__offcanvas {
+        position: relative;
+        z-index: 100;
+    }
+
+    /* line 21, ../../src/modules/offcanvas/scss/_mod_offcanvas.scss */
+
+    .m__offcanvas--left, .m__offcanvas--right, .m__offcanvas--disable-left,
+    .m__offcanvas--disable-right {
+        -webkit-animation-duration: 200ms;
+                animation-duration: 200ms;
+        -webkit-animation-fill-mode: forwards;
+                animation-fill-mode: forwards;
+    }
+
+    /* line 28, ../../src/modules/offcanvas/scss/_mod_offcanvas.scss */
+
+    .m__offcanvas--left {
+        -webkit-animation-name: offcanvasLeft;
+                animation-name: offcanvasLeft;
+    }
+
+    /* line 31, ../../src/modules/offcanvas/scss/_mod_offcanvas.scss */
+
+    .m__offcanvas--right {
+        -webkit-animation-name: offcanvasRight;
+                animation-name: offcanvasRight;
+    }
+
+    /* line 34, ../../src/modules/offcanvas/scss/_mod_offcanvas.scss */
+
+    .m__offcanvas--disable-left {
+        -webkit-animation-name: disableOffcanvasLeft;
+                animation-name: disableOffcanvasLeft;
+    }
+
+    /* line 37, ../../src/modules/offcanvas/scss/_mod_offcanvas.scss */
+
+    .m__offcanvas--disable-right {
+        -webkit-animation-name: disableOffcanvasRight;
+                animation-name: disableOffcanvasRight;
+    }
+
+    /* line 40, ../../src/modules/offcanvas/scss/_mod_offcanvas.scss */
+
+    .m__offcanvas__left, .m__offcanvas__right {
+        background-color: white;
+        bottom: 0;
+        display: block;
+        overflow: hidden;
+        padding-left: 1rem;
+        padding-right: 0;
+        position: fixed;
+        top: 15.5rem;
+    }
+
+    /* line 51, ../../src/modules/offcanvas/scss/_mod_offcanvas.scss */
+
+    .m__offcanvas__right {
+        z-index: 2;
+    }
+
+    /* line 54, ../../src/modules/offcanvas/scss/_mod_offcanvas.scss */
+
+    .m__offcanvas__left {
+        z-index: 3;
+    }
+
+    /* line 57, ../../src/modules/offcanvas/scss/_mod_offcanvas.scss */
+
+    .m__offcanvas__content {
+        padding-right: 1rem;
+    }
+}
+
+@media (max-width: 479px) {
+    /* line 70, ../../src/modules/offcanvas/scss/_mod_offcanvas.scss */
+
+    .m__offcanvas__left, .m__offcanvas__right {
+        width: 87%;
+    }
+
+    /* line 74, ../../src/modules/offcanvas/scss/_mod_offcanvas.scss */
+
+    .m__offcanvas__right {
+        right: -87%;
+    }
+
+    /* line 77, ../../src/modules/offcanvas/scss/_mod_offcanvas.scss */
+
+    .m__offcanvas__left {
+        left: -87%;
+    }
+
+    /* line 80, ../../src/modules/offcanvas/scss/_mod_offcanvas.scss */
+
+    .m__offcanvas--left {
+        -webkit-animation-name: offcanvasLeftXs;
+                animation-name: offcanvasLeftXs;
+    }
+
+    /* line 83, ../../src/modules/offcanvas/scss/_mod_offcanvas.scss */
+
+    .m__offcanvas--right {
+        -webkit-animation-name: offcanvasRightXs;
+                animation-name: offcanvasRightXs;
+    }
+
+    /* line 86, ../../src/modules/offcanvas/scss/_mod_offcanvas.scss */
+
+    .m__offcanvas--disable-left {
+        -webkit-animation-name: disableOffcanvasLeftXs;
+                animation-name: disableOffcanvasLeftXs;
+    }
+
+    /* line 89, ../../src/modules/offcanvas/scss/_mod_offcanvas.scss */
+
+    .m__offcanvas--disable-right {
+        -webkit-animation-name: disableOffcanvasRightXs;
+                animation-name: disableOffcanvasRightXs;
+    }
+
+    /* line 217, ../../src/modules/panels/scss/_mod_panels.scss */
+
+    .m__panel__sub-header {
+        padding-left: .5rem;
+        padding-right: .5rem;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+
+    /* line 221, ../../src/modules/panels/scss/_mod_panels.scss */
+
+    .m__panel__subheader-navlink {
+        border-bottom: 1px solid White;
+        padding-left: 0;
+        padding-right: 0;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+                justify-content: center;
+        width: calc(100% + 1rem);
+    }
+
+    /* line 228, ../../src/modules/panels/scss/_mod_panels.scss */
+
+    .m__panel__subheader-navlink:first-child {
+        margin-top: -0.5rem;
+    }
+
+    /* line 231, ../../src/modules/panels/scss/_mod_panels.scss */
+
+    .m__panel__subheader-navlink:last-child {
+        border-bottom: 1px solid #a3a3a3;
+        margin-bottom: -0.5rem;
+    }
+
+    /* line 86, ../../src/modules/lists/scss/_mod_list-match.scss */
+
+    .m__list__result {
+        -webkit-flex: 0 0 5rem;
+            -ms-flex: 0 0 5rem;
+                flex: 0 0 5rem;
+        font-size: 1.2rem;
+    }
+
+    /* line 90, ../../src/modules/lists/scss/_mod_list-match.scss */
+
+    .m__list__team {
+        width: calc(50% - (5rem / 2));
+    }
+
+    /* line 181, ../../src/modules/lists/scss/_mod_list-bet.scss */
+
+    .m__list-bet__icons-item span:not(:first-child) {
+        display: none;
+    }
+
+    /* line 130, ../../src/modules/lists/scss/_mod_list-filter.scss */
+
+    .m__list-filter__wrap1 {
+        height: 100%;
+    }
+
+    /* line 133, ../../src/modules/lists/scss/_mod_list-filter.scss */
+
+    .m__list-filter__wrap1, .m__list-filter__row1, .m__list-filter__cell1,
+    .m__list-filter__wrap1, .m__list-filter__cell1, .m__list-filter__wrap2,
+    .m__list-filter__row2, .m__list-filter__cell2 {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+
+    /* line 145, ../../src/modules/lists/scss/_mod_list-filter.scss */
+
+    .m__list-filter__cell2 {
+        border-left-color: White;
+        border-right-color: White;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 1199px) {
+    /* line 98, ../../src/modules/offcanvas/scss/_mod_offcanvas.scss */
+
+    .m__offcanvas__left, .m__offcanvas__right {
+        width: 30rem;
+    }
+
+    /* line 102, ../../src/modules/offcanvas/scss/_mod_offcanvas.scss */
+
+    .m__offcanvas__right {
+        right: -30rem;
+    }
+
+    /* line 105, ../../src/modules/offcanvas/scss/_mod_offcanvas.scss */
+
+    .m__offcanvas__left {
+        left: -30rem;
+    }
+
+    /* line 94, ../../src/modules/lists/scss/_mod_list-filter.scss */
+
+    .m__list-filter__wrap1 {
+        height: 100%;
+    }
+
+    /* line 97, ../../src/modules/lists/scss/_mod_list-filter.scss */
+
+    .m__list-filter__wrap1 {
+        display: block;
+    }
+
+    /* line 100, ../../src/modules/lists/scss/_mod_list-filter.scss */
+
+    .m__list-filter__row1, .m__list-filter__row2 {
+        display: table;
+        height: 100%;
+        width: 100%;
+    }
+
+    /* line 106, ../../src/modules/lists/scss/_mod_list-filter.scss */
+
+    .m__list-filter__cell1 {
+        display: block;
+        width: 100%;
+    }
+
+    /* line 110, ../../src/modules/lists/scss/_mod_list-filter.scss */
+
+    .m__list-filter__wrap2 {
+        display: table;
+        height: 100%;
+        width: 100%;
+    }
+
+    /* line 115, ../../src/modules/lists/scss/_mod_list-filter.scss */
+
+    .m__list-filter__cell2 {
+        width: 50%;
+    }
+
+    /* line 118, ../../src/modules/lists/scss/_mod_list-filter.scss */
+
+    .m__list-filter__cell2:first-child {
+        border-left-color: White;
+    }
+
+    /* line 121, ../../src/modules/lists/scss/_mod_list-filter.scss */
+
+    .m__list-filter__cell2:last-child {
+        border-right-color: White;
+    }
+}
+
+@media (max-width: 767px) {
+    /* line 113, ../../src/modules/offcanvas/scss/_mod_offcanvas.scss */
+
+    .m__offcanvas__left, .m__offcanvas__right {
+        padding-left: 1rem;
+        padding-right: 0;
+        top: 8.7rem;
+    }
+
+    /* line 119, ../../src/modules/offcanvas/scss/_mod_offcanvas.scss */
+
+    .m__offcanvas__content {
+        padding: 0 1rem 0 0;
+    }
+
+    /* line 24, ../../src/modules/offcanvas/scss/_mod_offcanvas_button.scss */
+
+    .m__offcanvas__button__container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: .5rem;
+        height: 4.2rem;
+    }
+
+    /* line 28, ../../src/modules/offcanvas/scss/_mod_offcanvas_button.scss */
+
+    .m__offcanvas__sitetitle {
+        display: block;
+    }
+
+    /* line 31, ../../src/modules/offcanvas/scss/_mod_offcanvas_button.scss */
+
+    .m__offcanvas__button__container {
+        box-sizing: content-box;
+    }
+
+    /* line 243, ../../src/modules/panels/scss/_mod_panels.scss */
+
+    .m__panel__heading {
+        border-left: 0 solid #aeaeae;
+        border-right: 0 solid #aeaeae;
+        border-top: 2px solid transparent;
+    }
+
+    /* line 248, ../../src/modules/panels/scss/_mod_panels.scss */
+
+    .m__panel--collapse .m__panel__heading {
+        background-image: none;
+    }
+
+    /* line 255, ../../src/modules/panels/scss/_mod_panels.scss */
+
+    .m__panel--filter .m__panel-title {
+        display: none;
+    }
+
+    /* line 258, ../../src/modules/panels/scss/_mod_panels.scss */
+
+    .m__panel--filter .m__panel__subheader-filterlink {
+        -webkit-flex: 1 0;
+            -ms-flex: 1 0;
+                flex: 1 0;
+    }
+
+    /* line 261, ../../src/modules/panels/scss/_mod_panels.scss */
+
+    .m__panel--filter .m__panel__subheader-filterlink:first-of-type {
+        margin-left: -0.5rem;
+    }
+
+    /* line 265, ../../src/modules/panels/scss/_mod_panels.scss */
+
+    .m__panel--filter .m__panel__sub-header {
+        -webkit-flex-direction: row;
+            -ms-flex-direction: row;
+                flex-direction: row;
+    }
+
+    /* line 269, ../../src/modules/panels/scss/_mod_panels.scss */
+
+    .m__panel__content--norm {
+        padding: .5rem;
+    }
+
+    /* line 272, ../../src/modules/panels/scss/_mod_panels.scss */
+
+    .m__panel__footer {
+        background-color: #fff;
+    }
+
+    /* line 73, ../../src/modules/navigations/scss/_mod_navlist-user.scss */
+
+    .m__navlist__client {
+        background-color: #d6d6d6;
+        border-bottom: 1px solid White;
+        -webkit-align-self: stretch;
+        -ms-flex-item-align: stretch;
+                align-self: stretch;
+        -js-display: flex;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex: 0 0 100%;
+            -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+                justify-content: center;
+    }
+
+    /* line 80, ../../src/modules/navigations/scss/_mod_navlist-user.scss */
+
+    .m__navlist__client > a {
+        padding: .5rem 0;
+    }
+
+    /* line 87, ../../src/modules/navigations/scss/_mod_navlist-user.scss */
+
+    .m__navlist__user-wrap {
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+
+    /* line 90, ../../src/modules/navigations/scss/_mod_navlist-user.scss */
+
+    .m__navlist__user {
+        -webkit-align-self: stretch;
+        -ms-flex-item-align: stretch;
+        -ms-grid-row-align: stretch;
+                align-self: stretch;
+        -webkit-flex: 1 0;
+            -ms-flex: 1 0;
+                flex: 1 0;
+    }
+
+    /* line 93, ../../src/modules/navigations/scss/_mod_navlist-user.scss */
+
+    .m__navlist__user li {
+        background-color: #d6d6d6;
+        border-bottom: 1px solid White;
+        -webkit-flex: 0 0 100%;
+            -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+                justify-content: center;
+    }
+
+    /* line 98, ../../src/modules/navigations/scss/_mod_navlist-user.scss */
+
+    .m__navlist__user li a {
+        padding: .5rem 0;
+    }
+
+    /* line 103, ../../src/modules/navigations/scss/_mod_navlist-user.scss */
+
+    .m__navlist__user-time {
+        display: none;
+    }
+
+    /* line 106, ../../src/modules/navigations/scss/_mod_navlist-user.scss */
+
+    .m__navlist__settings {
+        width: 100%;
+    }
+
+    /* line 109, ../../src/modules/navigations/scss/_mod_navlist-user.scss */
+
+    .m__navlist__btn {
+        width: 100%;
+    }
+
+    /* line 70, ../../src/modules/tabs/scss/_mod_tabs.scss */
+
+    .m__tabs .m__tabs-list__li {
+        background: #efefef;
+    }
+
+    /* line 123, ../../src/modules/lists/scss/_mod_list-bet.scss */
+
+    .m__list-bet__icons-bar {
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+                justify-content: center;
+    }
+
+    /* line 126, ../../src/modules/lists/scss/_mod_list-bet.scss */
+
+    .m__list-bet__buttons-row {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* line 129, ../../src/modules/lists/scss/_mod_list-bet.scss */
+
+    .m__list-bet__buttons {
+        -webkit-order: 3;
+        -ms-flex-order: 3;
+                order: 3;
+        width: 100%;
+    }
+
+    /* line 133, ../../src/modules/lists/scss/_mod_list-bet.scss */
+
+    .m__list-bet__type {
+        -webkit-flex: 0 0 100%;
+            -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+        text-align: center;
+    }
+
+    /* line 137, ../../src/modules/lists/scss/_mod_list-bet.scss */
+
+    .m__list-bet__item {
+        padding-top: .5rem;
+    }
+
+    /* line 140, ../../src/modules/lists/scss/_mod_list-bet.scss */
+
+    .m__list-bet__btn-text {
+        padding-right: .5rem;
+        -webkit-align-self: center;
+        -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+                align-self: center;
+    }
+
+    /* line 18, ../../src/modules/lists/scss/_mod_list-bet_live.scss */
+
+    .m__list-bet__live-first {
+        padding-bottom: .6rem;
+        padding-top: .6rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    /* line 126, ../../src/modules/offcanvas/scss/_mod_offcanvas.scss */
+
+    .m__offcanvas__left, .m__offcanvas__right {
+        top: 17.6rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    /* line 36, ../../src/modules/offcanvas/scss/_mod_offcanvas_button.scss */
+
+    .m__offcanvas__button__container, .m__offcanvas__button {
+        display: none;
+    }
+
+    /* line 52, ../../src/modules/lists/scss/_mod_list-filter.scss */
+
+    .m__list-filter__wrap1 {
+        height: 1px;
+        max-height: 100%;
+    }
+
+    /* line 56, ../../src/modules/lists/scss/_mod_list-filter.scss */
+
+    .m__list-filter__wrap2 {
+        display: table;
+        height: 100%;
+        width: 100%;
+    }
+
+    /* line 61, ../../src/modules/lists/scss/_mod_list-filter.scss */
+
+    .m__list-filter__row2 {
+        display: table-row;
+        height: 100%;
+        width: 100%;
+    }
+
+    /* line 66, ../../src/modules/lists/scss/_mod_list-filter.scss */
+
+    .m__list-filter__cell2 {
+        width: 50%;
+    }
+
+    /* line 70, ../../src/modules/lists/scss/_mod_list-filter.scss */
+
+    .m__list-filter__cell1 .m__list-filter__cell2 {
+        border-left-width: 0;
+    }
+
+    /* line 75, ../../src/modules/lists/scss/_mod_list-filter.scss */
+
+    .m__list-filter__cell1:first-child .m__list-filter__cell2:first-child {
+        border-left-color: White;
+    }
+
+    /* line 80, ../../src/modules/lists/scss/_mod_list-filter.scss */
+
+    .m__list-filter__cell1:last-child .m__list-filter__cell2:last-child {
+        border-right-color: White;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1499px) {
+    /* line 11, ../../src/modules/offcanvas/scss/_mod_offcanvas_navside.scss */
+
+    .m__offcanvas-navside {
+        overflow: hidden;
+        position: relative;
+    }
+
+    /* line 15, ../../src/modules/offcanvas/scss/_mod_offcanvas_navside.scss */
+
+    .m__offcanvas-navside__content {
+        padding-left: 2rem;
+        padding-right: 1rem;
+    }
+
+    /* line 23, ../../src/modules/offcanvas/scss/_mod_offcanvas_navside.scss */
+
+    .m__offcanvas-navside_bar {
+        width: 30rem;
+    }
+
+    /* line 26, ../../src/modules/offcanvas/scss/_mod_offcanvas_navside.scss */
+
+    .m__offcanvas-navside__side {
+        background-color: White;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        bottom: 0;
+        display: block;
+        left: -30rem;
+        padding-left: .5rem;
+        padding-right: 0;
+        padding-top: 1.5rem;
+        position: fixed;
+        top: 10.1rem;
+        width: 30rem;
+        height: calc(100vh - 10.1rem);
+        overflow-x: hidden;
+        overflow-y: auto;
+        z-index: 10;
+    }
+
+    /* line 47, ../../src/modules/offcanvas/scss/_mod_offcanvas_navside.scss */
+
+    .m_offcanvas-navside_content {
+        z-index: 1;
+    }
+
+    /* line 50, ../../src/modules/offcanvas/scss/_mod_offcanvas_navside.scss */
+
+    .m__offcanvas-navside--enable {
+        -webkit-animation-duration: 200ms;
+                animation-duration: 200ms;
+        -webkit-animation-fill-mode: forwards;
+                animation-fill-mode: forwards;
+        -webkit-animation-name: offCanvasNavSideEnable;
+                animation-name: offCanvasNavSideEnable;
+    }
+
+    /* line 55, ../../src/modules/offcanvas/scss/_mod_offcanvas_navside.scss */
+
+    .m__offcanvas-navside--enable .m__offcanvas-navside__searchpanel {
+        border-top-left-radius: 0;
+    }
+
+    /* line 59, ../../src/modules/offcanvas/scss/_mod_offcanvas_navside.scss */
+
+    .m__offcanvas-navside--disable {
+        -webkit-animation-duration: 200ms;
+                animation-duration: 200ms;
+        -webkit-animation-fill-mode: forwards;
+                animation-fill-mode: forwards;
+        -webkit-animation-name: offCanvasNavSideDisable;
+                animation-name: offCanvasNavSideDisable;
+        padding: 0;
+    }
+
+    /* line 48, ../../src/modules/offcanvas/scss/_mod_offcanvas_button-bar.scss */
+
+    .m__offcanvas-navside__site {
+        position: relative;
+    }
+
+    /* line 51, ../../src/modules/offcanvas/scss/_mod_offcanvas_button-bar.scss */
+
+    .m__offcanvas-navside__site:after {
+        background-color: White;
+        bottom: 0;
+        content: " ";
+        left: -0.5rem;
+        position: absolute;
+        right: auto;
+        top: 0;
+        width: 30rem;
+        z-index: 11;
+    }
+
+    /* line 63, ../../src/modules/offcanvas/scss/_mod_offcanvas_button-bar.scss */
+
+    .m__offcanvas-button-bar__grid-site {
+        position: relative;
+    }
+
+    /* line 66, ../../src/modules/offcanvas/scss/_mod_offcanvas_button-bar.scss */
+
+    .m__offcanvas-button-bar {
+        background-color: transparent;
+        display: table-cell;
+        margin-left: 0;
+        margin-right: 0;
+        overflow: hidden;
+        padding-left: 2rem;
+        position: fixed;
+        top: 11.6rem;
+        width: 0;
+        z-index: 12;
+    }
+
+    /* line 83, ../../src/modules/offcanvas/scss/_mod_offcanvas_button-bar.scss */
+
+    .m__offcanvas-button-bar .m__offcanvas-button-bar__scrollbar {
+        padding-top: 7.6rem;
+    }
+
+    /* line 86, ../../src/modules/offcanvas/scss/_mod_offcanvas_button-bar.scss */
+
+    .m__offcanvas-button-bar .m__offcanvas-button-bar__list {
+        list-style: none;
+    }
+
+    /* line 90, ../../src/modules/offcanvas/scss/_mod_offcanvas_button-bar.scss */
+
+    .m__offcanvas-button-bar .m__offcanvas-button-bar__list:not(:first-child):not(.m__offcanvas-button-bar__ui) {
+        margin-top: .3rem;
+    }
+
+    /* line 95, ../../src/modules/offcanvas/scss/_mod_offcanvas_button-bar.scss */
+
+    .m__offcanvas-button-bar a {
+        display: inline-block;
+        font-size: 2rem;
+        height: 3.7rem;
+        white-space: nowrap;
+    }
+
+    /* line 100, ../../src/modules/offcanvas/scss/_mod_offcanvas_button-bar.scss */
+
+    .m__offcanvas-button-bar a span {
+        display: inline-block;
+        text-indent: -100rem;
+    }
+
+    /* line 106, ../../src/modules/offcanvas/scss/_mod_offcanvas_button-bar.scss */
+
+    .m__offcanvas-button-bar--clicked {
+        bottom: auto;
+        height: 5rem;
+    }
+
+    /* line 110, ../../src/modules/offcanvas/scss/_mod_offcanvas_button-bar.scss */
+
+    .m__offcanvas-button-bar_icon {
+        border-radius: .4rem;
+        text-align: center;
+        text-decoration: none;
+        width: 2.5rem;
+    }
+
+    /* line 117, ../../src/modules/offcanvas/scss/_mod_offcanvas_button-bar.scss */
+
+    .m__offcanvas-button-bar_icon:before, .m__offcanvas-button-bar_icon:hover,
+    .m__offcanvas-button-bar_icon:visited, .m__offcanvas-button-bar_icon:active {
+        color: #001c6e;
+        font-size: 2rem;
+        text-decoration: none;
+    }
+
+    /* line 122, ../../src/modules/offcanvas/scss/_mod_offcanvas_button-bar.scss */
+
+    .m__offcanvas-button-bar_icon.m__offcanvas-button-bar_triangle {
+        background-color: #efefef;
+        border-radius: .4rem;
+        border: solid 1px #aeaeae;
+        height: 7rem;
+        padding-left: .4rem;
+        padding-top: 2.5rem;
+    }
+
+    /* line 135, ../../src/modules/offcanvas/scss/_mod_offcanvas_button-bar.scss */
+
+    .m__offcanvas-button-bar--flat .m__offcanvas-button-bar_icon.m__offcanvas-button-bar_triangle {
+        margin-top: 0;
+    }
+
+    /* line 141, ../../src/modules/offcanvas/scss/_mod_offcanvas_button-bar.scss */
+
+    .m__offcanvas-button-bar__search {
+        position: absolute;
+        top: 7.4rem;
+    }
+
+    /* line 145, ../../src/modules/offcanvas/scss/_mod_offcanvas_button-bar.scss */
+
+    .m__offcanvas-button-bar__ui {
+        font-size: 1.6rem;
+        position: absolute;
+        top: 0;
+    }
+
+    /* line 150, ../../src/modules/offcanvas/scss/_mod_offcanvas_button-bar.scss */
+
+    .m__offcanvas-button-bar {
+        width: 5.5rem;
+        height: calc(100vh - (11.6rem + 1.5rem));
+        overflow-x: hidden;
+    }
+
+    /* line 157, ../../src/modules/offcanvas/scss/_mod_offcanvas_button-bar.scss */
+
+    .m__offcanvas-button-bar--disable {
+        -webkit-animation: offCanvasNavbarButtondisable 100ms 75ms forwards ease-out;
+                animation: offCanvasNavbarButtondisable 100ms 75ms forwards ease-out;
+    }
+
+    /* line 161, ../../src/modules/offcanvas/scss/_mod_offcanvas_button-bar.scss */
+
+    .m__offcanvas-button-bar--disable .m__offcanvas-button-bar_triangle {
+        border-bottom-right-radius: 0;
+        border-right: 0 solid;
+        border-top-right-radius: 0;
+        padding-left: 0;
+        width: 2rem;
+    }
+
+    /* line 168, ../../src/modules/offcanvas/scss/_mod_offcanvas_button-bar.scss */
+
+    .m__offcanvas-button-bar--disable .m__offcanvas-button-bar__list:not(:last-child) {
+        -webkit-animation: offCanvasNavbarButtonHide 100ms normal forwards ease-out;
+                animation: offCanvasNavbarButtonHide 100ms normal forwards ease-out;
+    }
+
+    /* line 172, ../../src/modules/offcanvas/scss/_mod_offcanvas_button-bar.scss */
+
+    .m__offcanvas-button-bar--enable {
+        -webkit-animation: offCanvasNavbarButtonenable 100ms normal forwards ease-out;
+                animation: offCanvasNavbarButtonenable 100ms normal forwards ease-out;
+        z-index: 11;
+    }
+
+    /* line 177, ../../src/modules/offcanvas/scss/_mod_offcanvas_button-bar.scss */
+
+    .m__offcanvas-button-bar--enable .m__offcanvas-button-bar__list {
+        -webkit-animation: offCanvasNavbarButtonShow 100ms normal forwards ease-out;
+                animation: offCanvasNavbarButtonShow 100ms normal forwards ease-out;
+    }
+
+    /* line 180, ../../src/modules/offcanvas/scss/_mod_offcanvas_button-bar.scss */
+
+    .m__offcanvas-button-bar--enable .m__offcanvas-button-bar_triangle {
+        background-color: #efefef;
+        padding-left: 0;
+    }
+}
+
+@media (min-width: 480px) {
+    /* line 180, ../../src/modules/panels/scss/_mod_panels.scss */
+
+    .m__panel__subheader-navlink {
+        margin-bottom: -0.5rem;
+        margin-top: -0.5rem;
+    }
+
+    /* line 185, ../../src/modules/panels/scss/_mod_panels.scss */
+
+    .m__panel__subheader-navlink:first-child {
+        margin-left: -0.5rem;
+        padding-left: .5rem;
+    }
+
+    /* line 189, ../../src/modules/panels/scss/_mod_panels.scss */
+
+    .m__panel__subheader-navlink:last-child {
+        margin-right: -0.5rem;
+    }
+
+    /* line 160, ../../src/scss/custom/mixins/_mx_service.scss */
+
+    .m__panel__subheader-navlink:not(:last-child):after {
+        background-color: #fff;
+        height: 65%;
+        right: -1px;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+        width: 1px;
+        content: "";
+        position: absolute;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 991px) {
+    /* line 207, ../../src/modules/panels/scss/_mod_panels.scss */
+
+    .m__panel__subheader-navlink {
+        -webkit-flex: 1;
+            -ms-flex: 1;
+                flex: 1;
+    }
+
+    /* line 210, ../../src/modules/panels/scss/_mod_panels.scss */
+
+    .m__panel__sub-header {
+        -webkit-align-items: stretch;
+        -ms-flex-align: stretch;
+                align-items: stretch;
+    }
+}
+
+@media (min-width: 768px) {
+    /* line 281, ../../src/modules/panels/scss/_mod_panels.scss */
+
+    .m__panel__footer {
+        border-bottom: 1px solid #aeaeae;
+        border-left: 1px solid #aeaeae;
+        border-right: 1px solid #aeaeae;
+        border-bottom-left-radius: .4rem;
+        border-bottom-right-radius: .4rem;
+        background-image: linear-gradient(to bottom, #f3f3f3 0%, #efefef 7%, #ededed 26%, #dcdedd 100%);
+    }
+
+    /* line 286, ../../src/modules/panels/scss/_mod_panels.scss */
+
+    .m__panel__body {
+        border-left: 1px solid #aeaeae;
+        border-right: 1px solid #aeaeae;
+    }
+
+    /* line 289, ../../src/modules/panels/scss/_mod_panels.scss */
+
+    .m__panel__heading {
+        border-top-right-radius: .4rem;
+        border-top-left-radius: .4rem;
+        background-image: linear-gradient(to bottom, #f3f3f3 0%, #efefef 7%, #ededed 26%, #dcdedd 100%);
+    }
+
+    /* line 293, ../../src/modules/panels/scss/_mod_panels.scss */
+
+    .m__panel__subheader-filterlink {
+        padding-left: 1rem;
+        padding-right: .5rem;
+    }
+
+    /* line 114, ../../src/modules/navigations/scss/_mod_navlist-user.scss */
+
+    .m__navlist__btn {
+        margin-left: .2rem;
+        line-height: .85;
+    }
+
+    /* line 160, ../../src/scss/custom/mixins/_mx_service.scss */
+
+    .m__navlist__user:first-of-type > li:after {
+        border-right: 1px solid White;
+        height: 80%;
+        right: 0;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+        width: 1px;
+        content: "";
+        position: absolute;
+    }
+
+    /* line 131, ../../src/modules/navigations/scss/_mod_navlist-user.scss */
+
+    .m__navlist__user:last-of-type {
+        padding-left: .8rem;
+    }
+
+    /* line 18, ../../src/modules/lists/scss/_mod_list.scss */
+
+    .m__list--vertical {
+        display: table;
+        height: 100%;
+        margin-top: 0;
+        vertical-align: middle;
+    }
+
+    /* line 24, ../../src/modules/lists/scss/_mod_list.scss */
+
+    .m__list--vertical-helper {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    /* line 156, ../../src/modules/lists/scss/_mod_list-bet.scss */
+
+    .m__list-bet__item {
+        padding-top: 1.1rem;
+    }
+
+    /* line 159, ../../src/modules/lists/scss/_mod_list-bet.scss */
+
+    .m__list-bet__buttons {
+        min-height: 4.2rem;
+        width: 31.8rem;
+    }
+
+    /* line 163, ../../src/modules/lists/scss/_mod_list-bet.scss */
+
+    .m__list-bet__type {
+        padding-left: 70px;
+        padding-top: 1.1rem;
+        -webkit-flex: 1 0;
+            -ms-flex: 1 0;
+                flex: 1 0;
+    }
+
+    /* line 166, ../../src/modules/lists/scss/_mod_list-bet.scss */
+
+    .m__list-bet__type ~ .m__list-bet__buttons {
+        margin-right: 16px;
+    }
+
+    /* line 170, ../../src/modules/lists/scss/_mod_list-bet.scss */
+
+    .m__list-bet__icons-bar {
+        padding-left: 65px;
+    }
+
+    /* line 173, ../../src/modules/lists/scss/_mod_list-bet.scss */
+
+    .m__list-bet__btn-text {
+        padding-left: 1rem;
+        padding-top: 1.1rem;
+        -js-display: flex;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+                justify-content: center;
+    }
+
+    /* line 10, ../../src/modules/lists/scss/_mod_list-bet_live.scss */
+
+    .m__list-bet__live-first {
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 1.1rem;
+        max-width: 4rem;
+        vertical-align: top;
+        width: 4rem;
+    }
+}
+
+@media (max-width: 991px) {
+    /* line 64, ../../src/modules/navigations/scss/_mod_navlist-user.scss */
+
+    .m__navlist__user-wrap .m__navlist__user-add {
+        display: none;
+    }
+}
+
+@media (max-width: 30rem) {
+    /* line 40, ../../src/modules/modals/scss/_mod_modal.scss */
+
+    .m__modal.m__modal--sm .m__modal__content {
+        max-height: calc(100vh - 4rem);
+        width: calc(100vw - 4rem);
+    }
+}
+
+@media (max-width: 60rem) {
+    /* line 50, ../../src/modules/modals/scss/_mod_modal.scss */
+
+    .m__modal.m__modal--md .m__modal__content {
+        max-height: calc(100vh - 4rem);
+        width: calc(100vw - 4rem);
+    }
+}
+
+@media (max-width: 90rem) {
+    /* line 60, ../../src/modules/modals/scss/_mod_modal.scss */
+
+    .m__modal.m__modal--lg .m__modal__content {
+        max-height: calc(100vh - 4rem);
+        width: calc(100vw - 4rem);
+    }
+}
+
+@media (min-height: 0px) and (max-height: 768px) and (max-width: 768px) {
+    /* line 74, ../../src/modules/modals/scss/_mod_modal.scss */
+
+    .m__modal.m__modal--full .m__modal__content {
+        height: calc(100vh - 4rem);
+        width: calc(100vw - 4rem);
+    }
+}
+
+@media only screen and (max-width: 736px) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+    /* line 74, ../../src/modules/modals/scss/_mod_modal.scss */
+
+    .m__modal.m__modal--full .m__modal__content {
+        height: calc(100vh - 10.8rem);
+        max-height: 100vh;
+    }
+}
+
+@media only screen and (max-width: 736px) and (device-width: 375px) and (device-height: 667px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+    /* line 74, ../../src/modules/modals/scss/_mod_modal.scss */
+
+    .m__modal.m__modal--full .m__modal__content {
+        height: calc(100vh - 10.8rem);
+        max-height: 100vh;
+    }
+}
+
+@media only screen and (max-width: 736px) and (device-width: 414px) and (device-height: 736px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+    /* line 74, ../../src/modules/modals/scss/_mod_modal.scss */
+
+    .m__modal.m__modal--full .m__modal__content {
+        height: calc(100vh - 10.8rem);
+        max-height: 100vh;
+    }
+}
+
+@media (min-width: 1500px) {
+    /* line 43, ../../src/modules/forms/scss/_mod_form-user.scss */
+
+    .m__form-user__edit {
+        padding-right: 1rem;
+    }
+}
+
+@media (min-width: 992px) {
+    /* line 51, ../../src/modules/forms/scss/_mod_form-user.scss */
+
+    .m__form-user__edit-leftcol {
+        padding-right: .75rem;
+    }
+
+    /* line 54, ../../src/modules/forms/scss/_mod_form-user.scss */
+
+    .m__form-user__edit-rightcol {
+        padding-left: .75rem;
+    }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    /* line 61, ../../src/modules/forms/scss/_mod_form-user.scss */
+
+    .m__form-user__edit-radio {
+        min-height: 53px;
+    }
+}
+
+/*# sourceMappingURL=modules.css.map */

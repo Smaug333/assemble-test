@@ -28,12 +28,25 @@ module.exports = function (grunt) {
       // }
     },
 
+    'http-server': {
+      root: '../dist/',
+      port: 8082,
+      host: "0.0.0.0",
+      cache: 0,
+      showDir: true,
+      autoIndex: true,
+      ext: 'html',
+      runInBackground: true,
+    },
+
     watch: {
-      all: {
-        files: ['**/*.*'],
+      all: {    
+        
+        files: ['**/*.hbs', '!node_modules/', '!dist/', '!Gruntfile.js', '!package.json', '{hbs}'],
         tasks: ['assemble', 'notify'],
         options: {
-          spawn: false
+          spawn: false,
+          livereload: true
         }
       }
     },
@@ -51,10 +64,11 @@ module.exports = function (grunt) {
   });
 
   // These plugins provide necessary tasks.
+  grunt.loadNpmTasks('grunt-http-server');
   grunt.loadNpmTasks('grunt-assemble');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-notify');
   // Default task.
-  grunt.registerTask('default', ['assemble']);
+  grunt.registerTask('default', ['assemble', 'http-server']);
 
 };

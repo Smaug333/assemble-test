@@ -1,0 +1,34 @@
+.c__betslip__error-dialog {
+  @include background-color($background-color-betslip-error-dialog);
+  @include border($grid-gutter-width / 2, 1px, 1px, 1px, $border-color-error);
+  @include padding($grid-gutter-width / 2, x);
+  color: $color-error;
+  .c__betslip__error-input {
+    @include border(1px, x, $color-error);
+  }
+}
+
+.c__betslip__error-cell {
+  width: 100%;
+}
+
+.c__betslip__error-content {
+  .c__betslip__error-input {
+    @include background-color($background-color-error-input);
+    border-color: $border-color-input-error;
+    color: $color-error-input;
+  }
+  .c__betslip__error-marker {
+    @include background-color($background-color-error);
+  }
+}
+
+.c__betslip__error-button {
+  @include margin( $grid-gutter-width, 0, x );
+  color: $color-text-default;
+  font-weight: bold;
+  width: 100%;
+  +.c__betslip__error-button {
+    @include margin(0, 0, $grid-gutter-width, null);
+  }
+}

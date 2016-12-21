@@ -8,7 +8,7 @@ module.exports.register = function (Handlebars, options)  {
 
         var output = template(para);
 
-        console.log(this.data)
+        // console.log(this.data)
 
         return new Handlebars.SafeString(output); 
   });

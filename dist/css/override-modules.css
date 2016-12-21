@@ -1,0 +1,231 @@
+/* Jira TPL-372 changend until search panel work; value with serach_panel: 11.6rem*/
+
+/**
+ *
+ *  sass mixins for visual styling automation
+ *
+ *  @mixin border-right-betslip
+ *  @mixin gradient-panel-header
+ *  @mixin box-shadow-button-bet
+ *  @mixin button-states-default      - removes webkits default buttons styling
+ *  @mixin border-radius              - easy rounded corners
+ *  @mixin border                     - sets borders
+ *
+ *  @mixin background-aff             - generates proper image url, calls mixin background
+ *  @mixin background-payment         - generating classes for each vendor
+ *  @mixin background-image           - call to background with only 3 parameters, url, width, height
+ *  @mixin background-color           - call to background-generator with only 1 parameter, color
+ *  @mixin background-rgba            - call to background-generator with only 4 parameters, red, green, blue, alpha
+ *  @mixin background-gradient        - call to background-generator with only 1 parameter, w3c valid gradient definition
+ *  @mixin background                 - generates classes for single background images with media queries and height and width dimensiuons.
+                                        call to background-generator with 10 parameters
+ *  @mixin background-generator       - takes up to 10 parameters, setting all possible background values.
+ *
+ */
+
+/**
+ *  every parameter is requiered
+ *  $color:   arrow background-color
+ *  $repeat:  animation repeat
+ *  $speed:   animation speed
+ *  $size:    arrow size
+ *  $radius:  arrow radius
+ *  $rotate:  arrow position rotate
+ */
+
+/**
+ *  every parameter is requiered
+ *  $top:     number or null
+ *  $right:   number or x or null
+ *  $bottom:  number or x or null
+ *  $left:    number or x or null
+ *  $opt:     color
+ */
+
+/* line 7, ../../src/components/navbar/scss/_ovr_c_navbar---m_form-login.scss */
+
+.c__navbar__field .m__form-login {
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+            align-items: center;
+    -js-display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+}
+
+/* line 17, ../../src/components/navbar/scss/_ovr_c_navbar---m_form-login.scss */
+
+.c__navbar__field .m__form-login__register-login {
+    margin-bottom: 0;
+    margin-top: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+/* line 24, ../../src/components/navbar/scss/_ovr_c_navbar---m_form-login.scss */
+
+.c__navbar__field .m__form-login__icon {
+    font-size: 12px;
+    font-size: 1.2rem;
+}
+
+/* line 28, ../../src/components/navbar/scss/_ovr_c_navbar---m_form-login.scss */
+
+.c__navbar__field .m__form-login__group a,
+.c__navbar__field .m__form-login__group button {
+    margin-bottom: .5rem;
+    margin-bottom: .5rem;
+}
+
+/* line 6, ../../src/components/navbar/scss/_ovr_c_navbar---bs-forms.scss */
+
+.c__navbar__field .input-group {
+    width: 100%;
+}
+
+/* line 9, ../../src/components/navbar/scss/_ovr_c_navbar---bs-forms.scss */
+
+.c__navbar__field .input-group-addon {
+    padding: 3.75px;
+    padding: .375rem;
+}
+
+/* line 12, ../../src/components/navbar/scss/_ovr_c_navbar---bs-forms.scss */
+
+.c__navbar__field .form-control {
+    padding: 2px;
+    padding: .2rem;
+}
+
+/* line 2, ../../src/components/navbar/scss/_ovr_c_navbar---u_buttons.scss */
+
+.c__navbar__field .u__button__group {
+    display: inline-table;
+    vertical-align: middle;
+    width: 100%;
+}
+
+/* line 195, ../../src/scss/custom/mixins/_mx_service.scss */
+
+.c__navbar__field .u__button__group button:first-of-type {
+    background-color: #2876dd;
+}
+
+/* line 12, ../../src/components/navbar/scss/_ovr_c_navbar---u_buttons.scss */
+
+.c__navbar__field .u__button--default {
+    color: White;
+}
+
+/* line 3, ../../src/components/navside/scss/_ovr_c_navside---u_buttons.scss */
+
+.c__navside__lvl1 > .c__navside__link .u__button {
+    border-color: #939393;
+    color: #939393;
+}
+
+/* line 195, ../../src/scss/custom/mixins/_mx_service.scss */
+
+.c__navside__lvl1 > .c__navside__link .u__button:hover {
+    color: White;
+}
+
+/* line 2, ../../src/components/login/scss/_ovr_c_login-modal---u_buttons.scss */
+
+.c__login-modal .u__button--default {
+    color: White;
+}
+
+/* line 195, ../../src/scss/custom/mixins/_mx_service.scss */
+
+.c__login-modal .m__form-login .m__form-login__group:last-child {
+    margin-bottom: 0;
+}
+
+/* line 2, ../../src/modules/forms/scss/_ovr_m_form-login---bs_input-groups.scss */
+
+.m__form-login .input-group {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    /* line 7, ../../src/components/navbar/scss/_ovr_c_navbar---m_form-login.scss */
+
+    .c__navbar__field .m__form-login {
+        -webkit-flex-direction: row;
+            -ms-flex-direction: row;
+                flex-direction: row;
+    }/* line 17, ../../src/components/navbar/scss/_ovr_c_navbar---m_form-login.scss */
+
+    .c__navbar__field .m__form-login__register-login {
+        margin-top: 0;
+    }/* line 36, ../../src/components/navbar/scss/_ovr_c_navbar---m_form-login.scss */
+
+    .c__navbar__field .m__form-login__btn-login {
+        line-height: .85;
+    }/* line 39, ../../src/components/navbar/scss/_ovr_c_navbar---m_form-login.scss */
+
+    .c__navbar__field .m__form-login__btn-login {
+        width: auto;
+    }/* line 43, ../../src/components/navbar/scss/_ovr_c_navbar---m_form-login.scss */
+
+    .c__navbar__field .form-group:last-child {
+        margin-top: 0;
+    }/* line 47, ../../src/components/navbar/scss/_ovr_c_navbar---m_form-login.scss */
+
+    .c__navbar__field .m__form-login__group {
+        margin-bottom: 0;
+        margin-right: .5rem;
+    }/* line 50, ../../src/components/navbar/scss/_ovr_c_navbar---m_form-login.scss */
+
+    .c__navbar__field .m__form-login__group:last-child {
+        margin-top: 0;
+        -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+                flex-grow: 1;
+        text-align: right;
+    }/* line 55, ../../src/components/navbar/scss/_ovr_c_navbar---m_form-login.scss */
+
+    .c__navbar__field .m__form-login__group a,
+    .c__navbar__field .m__form-login__group button {
+        margin-bottom: 0;
+    }/* line 195, ../../src/scss/custom/mixins/_mx_service.scss */
+
+    .c__navbar__field .form-group:first-child {
+        margin-bottom: 0;
+    }/* line 28, ../../src/components/navbar/scss/_ovr_c_navbar---bs-forms.scss */
+
+    .c__navbar__field .form-group.m__form-login__register-login {
+        width: auto;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    /* line 39, ../../src/components/navbar/scss/_ovr_c_navbar---bs-forms.scss */
+
+    .c__navbar__field .form-group {
+        width: 200px;
+    }/* line 195, ../../src/scss/custom/mixins/_mx_service.scss */
+
+    .c__navbar__field .form-group:last-child {
+        padding-right: 0;
+        width: auto;
+    }
+}
+
+@media (min-width: 992px) {
+    /* line 52, ../../src/components/navbar/scss/_ovr_c_navbar---bs-forms.scss */
+
+    .c__navbar__field .form-group {
+        width: auto;
+    }
+}
+
+/*# sourceMappingURL=override-modules.css.map */

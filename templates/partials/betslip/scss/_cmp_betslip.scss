@@ -1,0 +1,117 @@
+@import 'cmp_betslip_placeholder';
+
+.c__betslip {
+    @extend %margin-bottom-panel-betslip;
+}
+
+.c__betslip__content {
+  @extend %background-color-panel-betslip;
+  @include border(null, 0, 1px, 0, $border-color-betslip-content);
+  @include padding(null, 0, null, 0);
+  color: $color-text-inverse;
+}
+
+.c__betslip__system {
+  @extend %betslip-item-setup;
+  height: $height-betslip-cell;
+}
+
+.c__betslip__topic {
+  @extend %betslip-item-setup;
+}
+
+.c__betslip__wrap {
+  @extend %betslip-flexbox;
+}
+
+.c__betslip__input-wrap {
+  width: $width-input-betslip;
+}
+
+.c__betslip__cell {
+  // @extend %betslip-cell-valign-middle;
+  @extend %betslip-flexbox-item-default;
+}
+
+.c__betslip__input {
+  @include padding(.2rem, .6rem, x);
+  height: 2.5rem;
+  text-align: right;
+  width: $width-input-betslip;
+}
+
+.c__betslip__multiplier {
+  @include padding(null, $grid-gutter-width);
+  flex-grow: 1;
+  // flex-basis: 50%;
+  text-align: right;
+}
+
+.c__betslip__choice {
+  display: flex;
+  .c__betslip__button {
+    @include pseudo-selector(first-child) {
+      @include margin(null, 0);
+    }
+  }
+}
+
+.c__betslip__button {
+  @include margin(null, $grid-gutter-width / 2, null, $grid-gutter-width / 2);
+  height: 2.3rem;
+  span {
+    @include vertical-align;
+    font-size: 1.2rem;
+  }
+}
+
+.c__betslip__checkbox {
+
+  @include margin(0, x);
+  flex-grow: 1;
+  .c__betslip__checkbox--valign {
+    @include pseudo-content(before, null) {
+      @include betslip-checkbox-valign(-.9rem)
+    }
+    @include pseudo-content(after, null) {
+      @include betslip-checkbox-valign(-1rem)
+    }
+  }
+}
+
+.c__betslip__link {
+  font-size: 1.8rem;
+  @include pseudo-content(before, null) {
+    left: auto;
+    right: 1rem;
+  }
+  span {
+    @include padding(null, null, null, 1rem);
+  }
+}
+
+.c__betslip__li {
+  @include border(1px, 1px, null, null, $border-color-panel);
+  background-color: $background-color-list-betslip-actions;
+  background-image: none;
+  flex-grow: 1;
+  text-align: center;
+  &:last-child {
+    @include border(null, 0, null, null, $color-border-default);
+  }
+  > a {
+    @include padding(1rem, x);
+    background-color: transparent;
+    display: block;
+    position: relative;
+    @include pseudo-selector {
+      color: #000;
+    }
+  }
+}
+.c__betslip__warning-marker {
+  @include background-color($background-color-warning);
+}
+.c__betslip__info-marker {
+   @include background-color($background-color-info);
+}

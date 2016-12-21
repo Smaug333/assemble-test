@@ -1,0 +1,89 @@
+%margin-bottom-panel-betslip {
+  @include margin(null, null, 1rem, null);
+}
+
+%background-color-panel-betslip {
+  @include background-color($background-color-betslip);
+}
+
+%background-color-panel-betslip-topic {
+  @include background-color($background-color-betslip-topic);
+}
+
+%border-betslip-actions {
+  @include border(null, 1px, null, 1px, $border-color-betslip-actions);
+}
+
+%betslip-flexbox {
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+%betslip-flexbox-item-default {
+  flex-shrink: 1;
+}
+
+%betslip-wrap {
+  @extend %background-color-panel-betslip-topic;
+  @include border(null, 0, null, 0, $color-border-default);
+  color: $color-text-inverse;
+}
+
+%betslip-seperator {
+  @include pseudo-selector("not(:first-child)") {
+    @include border(1px, null, null, null, $border-color-betslip-detail);
+  }
+}
+
+%betslip-team-wrap {
+  display:flex;
+  flex: 0 0 auto;
+  font-weight: 800;
+  text-align: left;
+  width: auto;
+}
+
+%betslip-cell-right {
+  text-align: right;
+}
+
+%betslip-summary-input {
+  @extend %betslip-cell-right;
+}
+
+%betslip-match {
+  display:flex;
+  flex: 1;
+  white-space: normal;
+}
+
+%betslip-choice {
+  @include margin(null, $grid-gutter-width / 2, null, null);
+  flex-grow: 1;
+  font-weight: 700;
+}
+
+%betslip-label {
+  flex-grow: 1;
+}
+
+%betslip-input-no {
+  @extend %betslip-summary-input;
+  width: $width-no-input-betslip;
+}
+
+%betslip-message-main {
+  @include margin(0, x);
+  @include padding(1.5rem, x);
+  font-weight: 700;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+%betslip-item-setup {
+  @include background-color($background-color-betslip-topic);
+  @include padding($grid-gutter-width / 2, x);
+}

@@ -1,0 +1,36 @@
+		<li class="{{classli}}">
+			<div class="c__betslip-summary__wrap">
+
+			{{#if simple}}
+				<label class="d__form-control__label c__betslip-summary__label">
+					{{label}}
+				</label>
+				
+				{{#if span}}
+				<span class="c__betslip-summary__multiplier">
+					{{span}}
+				</span>
+				{{/if}}
+
+				{{#if button}}
+				<button class="u__button u__button--default u__button--inline c__betslip__button" 
+						type="button" 
+						value="rate_max">
+					<span>{{button}}</span>
+				</button>
+				{{/if}}
+				
+				{{#if placeholder}}
+				<span class="c__betslip-summary__input-wrap">
+					<input 	type="text" 
+							class="d__form-control__input-number c__betslip__input form-control" 
+							id="exampleInputName2" 
+							placeholder="{{placeholder}}" />
+				</span>
+				{{/if}}
+				{{else}}
+				{{{ body }}}
+			{{/if}}
+			
+			</div>			
+		</li>	

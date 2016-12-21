@@ -4,35 +4,263 @@
   <head>
     <title>Index Template!</title>
     <base href="/">
+    <link rel="stylesheet" href="dist/css/vendor.css">
+    <link rel="stylesheet" href="dist/css/components.css">
+    <link rel="stylesheet" href="dist/css/modules.css">
+    <link rel="stylesheet" href="dist/css/override-modules.css">
   </head>
   <body  class="index">
     
 
-
-
- <br><br>
-
-
 <div class="panel-wrapper">
 	<div class="panel-header">header-test</div>
 	<div class="panel-body">
-				
-	<div class="m__panel-list__body">
-			<div class="m__tabs m__tabs-list">
-					<div class="c__betslip__content c__betslip__error-content">
-					Hallo?
-							Sportwetten
-	
-	
-					</div>
+				<!-- ############################ -->
+	<!-- cmp_betslip START -->
+	<article class="m__panel m__panel--collapse c__betslip">
+		<header class="m__panel__heading">
+			<!-- ############################ -->
+			<!-- cmp_betslip action_collapse START -->
+			<!-- build:remove:spring -->
+			<a class="m__panel__collapse-link u__arrow-collapse"
+										role="button" 
+										data-toggle="collapse" 
+										data-parent="#navside" 
+										href="#betslipCollapse" 
+										aria-controls="betslipCollapse"
+										aria-expanded="false">
+			<!-- /build -->
+			<!-- build:remove:sites -->
+			<a class="m__panel__collapse-link u__arrow-collapse">
+			<!-- /build -->
+			<span>Wettschein(3)</span>
+			</a>
+			<!-- cmp_betslip action_collapse END -->
+			<!-- ############################ -->	</header>
+		<div class="m__panel__body">
+			<div class="m__panel__content">
+				<!-- build:remove:spring -->
+				<div id="betslipCollapse" class="panel-collapse collapse in" tabpanel="" aria-labelledby="headingOne">
+			<!-- /build -->
+						<!-- ############################ -->
+						<!-- mod_tabs_betslip START -->
+						<ul class="c__betslip-action__nav" role="tablist">
+							
+							<li role="presentation" class="c__betslip__li c__betslip-action__li--active">
+						
+						<!-- build:remove:spring -->
+							
+								<a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">Einzel</a>
+						<!-- /build -->
+						<!-- build:remove:sites -->
+						
+								<a aria-controls="tab1" role="tab" class="t__cursor__pointer">Einzel</a>
+						<!-- /build -->
+						
+							</li>
+							
+							<li class="c__betslip__li" role="presentation">
+						
+						<!-- build:remove:spring -->
+						
+								<a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">Kombi</a>
+						
+						<!-- /build -->
+						<!-- build:remove:sites -->
+						
+								<a aria-controls="tab2" role="tab"  class="t__cursor__pointer">Kombi</a>
+						
+						<!-- /build -->
+						
+							</li>
+							<li class="c__betslip__li" role="presentation">
+						
+						<!-- build:remove:spring -->
+						
+								<a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab">System</a>
+						
+						<!-- /build -->
+						<!-- build:remove:sites -->
+						
+								<a aria-controls="tab3" role="tab"  class="t__cursor__pointer">System</a>
+						
+						<!-- /build -->
+						
+							</li>
+						</ul>
+						<!-- mod_tabs_betslip END -->
+						<!-- ############################ -->					
+						
+						
+						<div class="c__betslip-summary__content">
+						
+							<ul class="t__list--unstyle">
+							
+								<!-- ############################ -->
+								<!-- cmp_betslip extrema START -->
+								<li class="c__betslip__action--extrema">
+									<div class="c__betslip__wrap">
+								
+										<span class="c__betslip__cell c__betslip-action__label">Quote</span>
+								
+										<div class="c__betslip__cell c__betslip__choice">
+											<button class="c__betslip__button u__button u__button--inline u__button__color--first" type="button" value="rate_min">
+												<span>Min</span>
+											</button>
+											<button class="c__betslip__button u__button u__button--inline u__button--default" type="button" value="rate_max">
+												<span>Max</span>
+											</button>
+										</div>
+								
+										<span  class="c__betslip__cell">520,00</span>
+									</div>
+								</li>
+								<!-- cmp_betslip extrema 	END -->
+								<!-- ############################ -->
+										<li class="c__betslip-summary__seperator">
+									<div class="c__betslip-summary__wrap">
+						
+										<label class="d__form-control__label c__betslip-summary__label">
+											Einsatz
+										</label>
+										
+										<span class="c__betslip-summary__multiplier">
+											2 x
+										</span>
+						
+										
+										<span class="c__betslip-summary__input-wrap">
+											<input 	type="text" 
+													class="d__form-control__input-number c__betslip__input form-control" 
+													id="exampleInputName2" 
+													placeholder="5.000,00" />
+										</span>
+									
+									</div>			
+								</li>	
+								
+										<li class="c__betslip-summary__seperator">
+									<div class="c__betslip-summary__wrap">
+						
+										<label class="d__form-control__label c__betslip-summary__label">
+											Gesamt
+										</label>
+										
+						
+										<button class="u__button u__button--default u__button--inline c__betslip__button" 
+												type="button" 
+												value="rate_max">
+											<span>Max</span>
+										</button>
+										
+										<span class="c__betslip-summary__input-wrap">
+											<input 	type="text" 
+													class="d__form-control__input-number c__betslip__input form-control" 
+													id="exampleInputName2" 
+													placeholder="5.000,00" />
+										</span>
+									
+									</div>			
+								</li>	
+						
+										<li class="c__betslip-summary__seperator">
+									<div class="c__betslip-summary__wrap">
+						
+										<label class="d__form-control__label c__betslip-summary__label">
+											Gebühr
+										</label>
+										
+										<span class="c__betslip-summary__multiplier">
+											0,0
+										</span>
+						
+										
+									
+									</div>			
+								</li>	
+						
+										<li class="c__betslip-summary__bill">
+									<div class="c__betslip-summary__wrap">
+						
+										<label class="d__form-control__label c__betslip-summary__label">
+											Gesamt
+										</label>
+										
+										<span class="c__betslip-summary__multiplier">
+											5000,00
+										</span>
+						
+										
+									
+									</div>			
+								</li>	
+						
+						
+										<li class="c__betslip-summary__seperator">
+									<div class="c__betslip-summary__wrap">
+						
+										<label class="d__form-control__label c__betslip-summary__label">
+											Gewinnchance
+										</label>
+										
+										<span class="c__betslip-summary__multiplier">
+											205.173,02
+										</span>
+						
+										
+									
+									</div>			
+								</li>	
+								
+							</ul>
+							
+						</div>
+						<!-- cmp_betslip summary END -->
+						<!-- ############################ -->
+						<!-- ############################ -->
+						<!-- cmp_betslip accept START -->
+						<!-- TODO: ADD spring/sites logic -->
+						<ul class="t__list--unstyle">
+							<li class="c__betslip__action--proceed">
+								<div class="c__betslip__wrap c__betslip__checkbox">
+									<span class="checkbox">
+										<input type="checkbox">
+										<!-- build:remove:spring -->
+										<label for="checkbox0" class="d__form-control__label c__betslip__checkbox--valign" data-toggle="tooltip" data-placement="top" title="Ich stimme zu, die Wette(n) zu platzieren, auch wenn sich etwaige Quoten bei der Bestätigung und/oder Überprüfung geändert haben.">
+										<!-- /build -->
+										<!-- build:remove:sites -->
+										<label for="checkbox0" class="d__form-control__label c__betslip__checkbox--valign" title="Ich stimme zu, die Wette(n) zu platzieren, auch wenn sich etwaige Quoten bei der Bestätigung und/oder Überprüfung geändert haben.">
+										<!-- /build -->
+											Quotenänderungen akzeptieren
+										</label>
+									</span>
+								</div>
+							</li>	
+						</ul>
+						<!-- cmp_betslip accept END -->
+						<!-- ############################ -->		<!-- build:remove:spring -->
+				</div>
+			<!-- /build -->
 			</div>
-	</div>
-
+		</div>
+	</article>
+	<!-- cmp_betslip END -->
+	<!-- ############################ -->
 			</div>
 		<div class="panel-footer">footer-test</div>
 	</div>
 </div>
+
 look at dead chicken!
+
+
+
+<ul>
+	<li>1the name 1</li>	
+	<li>1the name 2</li>	
+	<li>1the name 3</li>	
+	
+</ul>
 
   </body>
 </html>

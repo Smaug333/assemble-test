@@ -1,0 +1,23 @@
+<!-- ############################ -->
+<!-- cmp_betslip START -->
+<article class="m__panel m__panel--collapse c__betslip">
+	<header class="m__panel__heading">
+		{{> cmp_betslip_action--collapse name="Wettschein(3)" collapse="betslipCollapse" }}
+	</header>
+	<div class="m__panel__body">
+		<div class="m__panel__content">
+			<!-- build:remove:spring -->
+			<div id="betslipCollapse" class="panel-collapse collapse in" tabpanel="" aria-labelledby="headingOne">
+		<!-- /build -->
+					{{> cmp_betslip_action--tabs }}
+					{{> cmp_betslip_summary }}
+{{!-- 					{{ include("main/cmp_betslip_summary.html") }}
+					{{ include("action/cmp_betslip_action--send.html") }} --}}
+		<!-- build:remove:spring -->
+			</div>
+		<!-- /build -->
+		</div>
+	</div>
+</article>
+<!-- cmp_betslip END -->
+<!-- ############################ -->

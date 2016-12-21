@@ -1,12 +1,20 @@
 ---
 page-title: Index Template!
 site-class: "index"
+classli: c__betslip-summary__seperator
 
 intro: 
   name: 
-  - the name 1
-  - the name 2
-  - the name 3
+  - 1the name 1
+  - 1the name 2
+  - 1the name 3
+
+
+list: <% _.forEach(people, function(name) { %><li><%= name %></li><% }); %>
+people:
+- Jon Schlinkert
+- Brian Woodward
+
 
 conditional: true
 conditional2: true
@@ -27,21 +35,25 @@ c-account-bets-show-header: different value possible? Oh shiny!
 
 tpl: 'templates/partials/wrapme.hbs'
 
-
 c-payment-list-type: mal schauen
 m-form-password-css: look at dead chicken!
 ---
+
+{{#panel2 "block" paneltitle="header-test" panelfooter="footer-test" }}
+	{{>cmp_betslip  }}
+{{/panel2}}
+
+
+{{m-form-password-css}}
+
 {{!-- {{> wrapme paneltitle= "Panel Header inline" panelfooter= "This footer" m-offcanvas-opt-title-main="Hauswette" }} --}}
 {{!-- {{#panel paneltitle= "Panel Header inline" panelfooter= "This footer"}}{{/panel}} --}}
 {{!-- {{> wrapme paneltitle="Panel Header inline2" panelfooter="This footer3" panelcontent="cmp_betslip_tabs" m-offcanvas-opt-title-main="inline Sportwetten"}} --}}
 
 
-{{ globalVars.c-payment-list-type }}
-{{ globalVars.m-offcanvas-opt-title-main }} <br><br>
-
-
-{{#panel2 "block" paneltitle="header-test" panelfooter="footer-test" }}
-	{{>cmp_betslip_tabs   }}
-{{/panel2}}
-
-{{m-form-password-css}}
+<ul>
+{{#each intro.name }}
+	<li>{{this}}</li>	
+{{/each}}
+	
+</ul>

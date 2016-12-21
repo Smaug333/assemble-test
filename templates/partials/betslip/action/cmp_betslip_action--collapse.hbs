@@ -1,16 +1,18 @@
-
 <!-- ############################ -->
 <!-- cmp_betslip action_collapse START -->
-
+<!-- build:remove:spring -->
 <a class="m__panel__collapse-link u__arrow-collapse"
 							role="button" 
 							data-toggle="collapse" 
 							data-parent="#navside" 
-							href="#{{betslip-collapse}}" 
-							aria-controls="{{betslip-collapse}}"
+							href="#{{ collapse }}" 
+							aria-controls="{{ collapse }}"
 							aria-expanded="false">
-
-<span>{{ betslip-deep-collapse }}</span>
+<!-- /build -->
+<!-- build:remove:sites -->
+<a class="m__panel__collapse-link u__arrow-collapse">
+<!-- /build -->
+<span>{{ name }}</span>
 </a>
 <!-- cmp_betslip action_collapse END -->
 <!-- ############################ -->
